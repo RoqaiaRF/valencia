@@ -1,14 +1,14 @@
 import React from 'react'
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
-import Container from '../src/components/Container';
-import Address from '.././src/pages/Address'
-import Docs from '.././src/pages/Docs'
-import Info from '.././src/pages/Info'
-import TermConditions from '.././src/pages/TermsConditions'
-import Vehicle from '.././src/pages/Vehicle'
-import Error404 from '.././src/pages/Error404'
- import OTP  from '.././src/pages/Otp';
+import Container from './components/Container';
+import Address from './pages/Address'
+import Docs from './pages/Docs'
+import Info from './pages/Info'
+import TermConditions from './pages/TermsConditions'
+import Vehicle from './pages/Vehicle'
+import Error404 from './pages/Error404'
+ import OTP  from './pages/Otp';
 
 function App() {
   return (

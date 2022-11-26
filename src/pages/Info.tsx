@@ -1,11 +1,10 @@
-// import React, { useEffect, useState } from "react";
+ import React, { useEffect, useState } from "react";
 
 const Info = () => {
 
     return (
         <>          
         <h3 className="field"> معلومات المدين</h3>
-
             <div className="form-group form-inline ">
                 <label className="control-label">الاسم (حسب الهوية) : <span className="star">*</span></label>
                 <input type="text" className="form-control width input_step1" placeholder="الاسم الاول" name="name1" id="name1"   required="" />

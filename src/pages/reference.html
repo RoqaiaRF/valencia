@@ -1,0 +1,1621 @@
+<html class="no-js"><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><!--<![endif]--><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AL TAS-HEELAT</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link href="https://app.altas-heelat.com/css/form2.css" rel="stylesheet">
+
+    <link href="https://app.altas-heelat.com/css/styles.css" rel="stylesheet">
+    <link href="https://app.altas-heelat.com/css/responsive.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&amp;display=swap" rel="stylesheet">
+
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-39365077-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</head>
+<body dir="rtl" class="modal-open" style="padding-right: 17px;">
+<div class="container">
+    <form id="form" role="form" action="https://app.altas-heelat.com" method="post" class="form" enctype="multipart/form-data">
+        <input type="hidden" name="_token" value="MFWrWivVsmKl6PVKda6qnQtKQJoVz5zCkppgomFy">   
+             <div id="myModal" class="modal fade in" data-backdrop="static" data-keyboard="false" aria-hidden="false" style="display: block;"><div class="modal-backdrop fade in"></div>
+            <div class="modal-dialog">
+                <!-- <div class="modal-content">
+                    <div class="modal-body">
+                        <h2>الرجاء اختيار نوع القرض</h2>
+                        <div class="form-group ">
+                            <button type="button" class="btn btn-primary btn-lg btn-block first" data-dismiss="modal" id="car_loan_button">قرض سيارة</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block second" data-dismiss="modal" id="estate_loan_button">قرض عقار</button>
+                            <input type="hidden" name="loan_type" id="loan_type" value="" required="">
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+
+        <div class="text-center">
+            <img class="tasheelat_image" src="https://www.altas-heelat.com/sites/all/themes/tasheelat_subtheme/logo.png" alt="">
+        </div>
+
+    <div class="stepwizard col-sm-offset-3" style="width: 100%;">
+        <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step">
+                <a href="#step-1" type="button" class="btn btn-circle btn-default btn-primary">1</a>
+                <p>معلومات المدين</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                <p>عنوان المدين</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                <p>معلومات العمل</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+                <p>معلومات القرض</p>
+            </div>
+            <div class="stepwizard-step">
+                <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                <p>المرفقات</p>
+            </div>
+
+            <div class="stepwizard-step">
+                <a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
+                <p>الشروط والاحكام</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="row setup-content" id="step-1" style="display: block;">
+            <div class="col-sm-12">
+
+    <h3 class="field"> معلومات المدين</h3>
+
+       
+    <div class="form-group form-inline ">
+        <label class="control-label">الاسم (حسب الهوية) : <span class="star">*</span></label>
+        <input type="text" class="form-control width input_step1" placeholder="الاسم الاول" name="name1" id="name1" value="" required="">
+        <input type="text" class="form-control width" placeholder="اسم الأب" name="name2" id="name2" required="" value="">
+        <input type="text" class="form-control width" placeholder="اسم الجد" name="name3" id="name3" required="" value="">
+        <input type="text" class="form-control width" placeholder="اسم العائلة" name="name4" id="name4" required="" value="">
+    </div>
+
+    <div class="form-group form-inline ">
+        <label class="control-label">الجنسية : <span class="star">*</span></label>
+        <select id="nationality" class="form-control" name="nationality" required="">
+            <option value="" selected="" disabled="" hidden="">اختر الجنسية</option>
+            <option value="أردنية">أردنية</option>
+            <option value="غير أردنية">غير أردنية</option>
+        </select>
+    </div>
+
+
+    <div class="form-group form-inline ">
+        <label class="control-label">الجنس : <span class="star">*</span></label>
+        <select id="gender" class="form-control" name="gender" required="">
+            <option value="" selected="" disabled="" hidden="">اختر الجنس</option>
+            <option value="ذكر">ذكر</option>
+            <option value="أنثى">أنثى</option>
+        </select>
+    </div>
+    
+
+    <div class="form-group form-inline " id="national_number" style="display: none;">
+        <label class="control-label">الرقم الوطني : <span class="star">*</span></label>
+        <input type="text" maxlength="10" class="form-control" placeholder="الرقم الوطني" pattern="[0-9\u0660-\u0669]{10}" value="" name="national_number" id="national_number1">
+        <span class="errors_steps" id="national_number_error"></span>
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">نوع الوثيقة :</label>
+        <select name="doc_type" id="" class="form-control">
+            <option value="" disabled="" selected="" hidden="">اختر نوع الوثيقة </option>
+            <option value="جواز سفر">جواز سفر</option>
+            <option value="هوية احوال مدنية" style="display: none;">هوية احوال مدنية</option>
+        </select>
+    </div>
+    <div class="form-group form-inline">
+        <label class="control-label">رقم الوثيقة :</label>
+        <input type="text" class="form-control" value="" placeholder="رقم الوثيقة" name="doc_number">
+    </div>
+    
+    <div class="form-group form-inline ">
+        <label class="control-label">البريد الالكتروني : </label>
+        <input type="text" class="form-control" placeholder="example@domain.com" value="" name="email" id="email">
+
+    </div>
+    
+
+    <div class="form-group form-inline " id="mobile_number_valid">
+        <label class="control-label">رقم الهاتف الخلوي : <span class="star">*</span></label>
+        <input type="tel" maxlength="10" class="form-control" placeholder="رقم الهاتف الخلوي (زين / أورانج / أمنية)" name="mobile_number" required="" id="mobile_number" pattern="(07|\u0660\u0667)[7-9\u0667-\u0669][0-9\u0660-\u0669]{7}" value="">
+        <span class="errors_steps" id="mobile_error"></span>
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">هل يوجد كفلاء : <span class="star">*</span></label>
+        <input type="radio" id="yes_kafeel" name="kafeel-if" required="">
+        <label for="yes_kafeel">يوجد</label>
+        <div class=" second_radio ">
+            <input type="radio" id="no_kafeel" name="kafeel-if">
+            <label for="no_kafeel">لا يوجد</label>
+            <input type="hidden" name="kafeel" id="kafeel" value="">
+        </div>
+    </div>
+</div>
+
+    
+    <div class="col-sm-12" id="kafeel_info" style="display: none;">
+        <h3 class="field"> معلومات الكفيل</h3>
+        <div class="form-group form-inline ">
+            <label class="control-label">الاسم الرباعي : <span class="star">*</span></label>
+            <input type="text" class="form-control kafeel-input required-kafeel width input_step1" placeholder="الاسم الاول" name="name1_kafeel" id="name1_kafeel" value="">
+            <input type="text" class="form-control kafeel-input required-kafeel width" placeholder="اسم الأب" name="name2_kafeel" id="name2_kafeel" value="">
+            <input type="text" class="form-control kafeel-input required-kafeel width" placeholder="اسم الجد" name="name3_kafeel" id="name3_kafeel" value="">
+            <input type="text" class="form-control kafeel-input required-kafeel width" placeholder="اسم العائلة" name="name4_kafeel" id="name4_kafeel" value="">
+        </div>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">الجنسية : <span class="star">*</span></label>
+            <select id="nationality_kafeel" class="form-control kafeel-input required-kafeel" name="nationality_kafeel">
+                <option value="" selected="" disabled="" hidden="">اختر الجنسية</option>
+                <option value="أردنية">أردنية</option>
+                <option value="غير أردنية">غير أردنية</option>
+            </select>
+        </div>
+
+        <div class="form-group form-inline " id="national_number_kafeel" style="display: none;">
+            <label class="control-label">الرقم الوطني : <span class="star">*</span></label>
+            <input type="text" class="form-control kafeel-input" placeholder="الرقم الوطني" pattern="[0-9\u0660-\u0669]{10}" name="national_number_kafeel" value="" id="national_number_kafeel1" maxlength="10">
+            <span class="errors_steps" id="national_number_error_kafeel"></span>
+        </div>
+
+
+        <div class="form-group form-inline">
+            <label class="control-label">نوع الوثيقة :</label>
+            <select name="doc_type_kafeel" id="" class="form-control kafeel-input">
+                <option value="" disabled="" selected="" hidden="">اختر نوع الوثيقة </option>
+                <option value="جواز سفر">جواز سفر</option>
+                <option value="هوية احوال مدنية" style="display: none;">هوية احوال مدنية</option>
+            </select>
+        </div>
+        <div class="form-group form-inline">
+            <label class="control-label">رقم الوثيقة :</label>
+            <input type="text" class="form-control kafeel-input" value="" placeholder="رقم الوثيقة" name="doc_number_kafeel">
+        </div>
+
+        
+        <div class="form-group form-inline ">
+            <label class="control-label">البريد الالكتروني : </label>
+            <input type="text" class="form-control kafeel-input" placeholder="example@domain.com" value="" name="email_kafeel" id="email_kafeel">
+
+        </div>
+        
+
+        <div class="form-group form-inline " id="mobile_number_valid_kafeel">
+            <label class="control-label">رقم الهاتف الخلوي : <span class="star">*</span></label>
+            <input type="tel" maxlength="10" class="form-control required-kafeel kafeel-input" placeholder="رقم الهاتف الخلوي (زين / أورانج / أمنية) " name="mobile_number_kafeel" id="mobile_number_kafeel" pattern="(07|\u0660\u0667)[7-9\u0667-\u0669][0-9\u0660-\u0669]{7}" value="">
+            <span class="errors_steps" id="mobile_error_kafeel"></span>
+        </div>
+
+    </div>
+
+<div id="myModal2" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="form-group ">
+                    <div class="form-group form-inline" id="otp_div">
+                        <p id="otp_message"></p>
+                        <input type="text" class="form-control" id="otp_code" style="width: 75%!important;" required="">
+                        <button type="button" class="btn btn-md btn-primary" id="check_otp">تأكيد</button>
+                        <button type="button" class="btn btn-md btn-primary" id="close_otp">إغلاق</button>
+                        <input type="hidden" class="form-control" id="hidden_otp">
+                        <p id="otp_error"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <button class="btn btn-primary nextBtn btn-lg pull-right step1_validation" type="button" id="otp">التالي</button>
+
+
+
+
+        </div>
+
+        <div class="row setup-content" id="step-2" style="display: none;">
+            <div class="col-sm-12">
+    <h3 class="field">عنوان المدين</h3>
+
+    
+    <div class="form-group form-inline ">
+        <label class="control-label">المحافظة : <span class="star">*</span></label>
+        <select name="state" id="state" class="form-control" required="">
+            <option value="" disabled="" selected="" hidden="">إختر المحافظة</option>
+            <option value="عمان">عمان</option>
+            <option value="اربد">اربد</option>
+            <option value="الزرقاء">الزرقاء</option>
+            <option value="العقبة">العقبة</option>
+            <option value="البلقاء">البلقاء</option>
+            <option value="مادبا">مادبا</option>
+            <option value="جرش">جرش</option>
+            <option value="الطفيلة">الطفيلة</option>
+            <option value="عجلون">عجلون</option>
+            <option value="المفرق">المفرق</option>
+            <option value="الكرك">الكرك</option>
+            <option value="معان">معان</option>
+        </select>
+    </div>
+
+    <div class="form-group form-inline ">
+        <label class="control-label">إسم المنطقة : <span class="star">*</span></label>
+        <input type="text" class="form-control" placeholder="المنطقة" name="area" required="" value="">
+    </div>
+    <div class="form-group form-inline">
+        <label class="control-label">إسم الشارع :</label>
+        <input type="text" class="form-control" placeholder="الشارع" name="street" value="">
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">أقرب معلم :</label>
+        <input type="text" class="form-control" placeholder="أقرب معلم" name="nearest_place" value="">
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">رقم المنزل / البناية :</label>
+        <input type="text" class="form-control" placeholder="رقم المنزل / البناية" name="building_number" value="">
+    </div>
+     
+    <div class="form-group form-inline ">
+        <label class="control-label">اسم الفرع : <span class="star">*</span></label>
+        <select name="branch_name" id="branch_name" class="form-control" required="">
+            <option value="" disabled="" selected="" hidden="">إختر اسم الفرع</option>
+            <option value="شميساني">شميساني</option>
+            <option value="المدينة الرياضية">المدينة الرياضية</option>
+            <option value="الوحدات">الوحدات</option>
+            <option value="العقبة">العقبة</option>
+            <option value="دابوق">دابوق</option>
+            <option value="الزرقاء">الزرقاء</option>
+            <option value="إربد">إربد</option>
+            <option value="دائرة المشاريع الصغيرة والمتوسطة">دائرة المشاريع الصغيرة والمتوسطة</option>
+        </select>
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">إسم الموظف :</label>
+        <input type="text" class="form-control" placeholder="إسم الموظف" name="branch_employee_name" value="">
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">إسم المعرض :</label>
+        <input type="text" class="form-control" placeholder="إسم المعرض" name="ma3rad" value="">
+    </div>
+    
+</div>
+
+    
+
+    <div class="col-sm-12" id="kafeel_sakan_info" style="display: none;">
+        <h3 class="field">عنوان الكفيل</h3>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">المحافظة : <span class="star">*</span></label>
+            <select name="state_kafeel" id="state_kafeel" class="form-control kafeel-input required-kafeel">
+                <option value="" disabled="" selected="" hidden="">إختر المحافظة</option>
+                <option value="عمان">عمان</option>
+                <option value="اربد">اربد</option>
+                <option value="الزرقاء">الزرقاء</option>
+                <option value="العقبة">العقبة</option>
+                <option value="البلقاء">البلقاء</option>
+                <option value="مادبا">مادبا</option>
+                <option value="جرش">جرش</option>
+                <option value="الطفيلة">الطفيلة</option>
+                <option value="عجلون">عجلون</option>
+                <option value="المفرق">المفرق</option>
+                <option value="الكرك">الكرك</option>
+                <option value="معان">معان</option>
+            </select>
+        </div>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">إسم المنطقة : <span class="star">*</span></label>
+            <input type="text" class="form-control kafeel-input required-kafeel" placeholder="المنطقة" name="area_kafeel" value="">
+        </div>
+        <div class="form-group form-inline">
+            <label class="control-label">إسم الشارع :</label>
+            <input type="text" class="form-control kafeel-input" placeholder="الشارع" name="street_kafeel" value="">
+        </div>
+
+        <div class="form-group form-inline">
+            <label class="control-label">أقرب معلم :</label>
+            <input type="text" class="form-control kafeel-input" placeholder="أقرب معلم" name="nearest_place_kafeel" value="">
+        </div>
+
+        <div class="form-group form-inline">
+            <label class="control-label">رقم المنزل / البناية :</label>
+            <input type="text" class="form-control kafeel-input" placeholder="رقم المنزل / البناية" name="building_number_kafeel" value="">
+        </div>
+
+</div>
+
+    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">التالي</button>
+
+
+
+        </div>
+
+        <div class="row setup-content" id="step-3" style="display: none;">
+            <div class="col-sm-12">
+    <h3 class="field">معلومات العمل</h3>
+
+    
+    <div class="form-group form-inline ">
+        <label class="control-label">نوع العمل : <span class="star">*</span></label>
+        <select name="type_of_employment" id="type_of_employment" class="form-control" required="">
+            <option value="" disabled="" selected="" hidden="">إختر نوع العمل</option>
+            <option value="موظف">موظف</option>
+            <option value="صاحب عمل">صاحب عمل</option>
+            <option value="أخرى">أخرى</option>
+        </select>
+    </div>
+
+    <div id="employee-related" style="display: none;">
+    <div class="form-group form-inline " id="employer_employee">
+        <label class="control-label">جهة العمل : <span class="star">*</span></label>
+        <input type="text" class="form-control employee-input required-employee" placeholder="جهة العمل" name="employer_employee" value="">
+    </div>
+
+    <div class="form-group form-inline " id="job_title_employee">
+        <label class="control-label">الوظيفة : <span class="star">*</span></label>
+        <input type="text" class="form-control employee-input required-employee" placeholder="الوظيفة" name="job_title_employee" value="">
+    </div>
+
+    <div class="form-group form-inline " id="work_phone_number_employee">
+        <label class="control-label">هاتف العمل : <span class="star">*</span></label>
+        <input type="text" class="form-control employee-input required-employee" placeholder="هاتف العمل" name="work_phone_number_employee" value="">
+    </div>
+
+    <div class="form-group form-inline " id="total_salary_employee">
+        <label class="control-label hide_now">اجمالي الراتب الشهري : <span class="star">*</span></label>
+        <input type="text" class="form-control employee-input required-employee" placeholder="اجمالي الراتب الشهري (دينار)" name="total_salary_employee" value="">
+    </div>
+
+    <div class="form-group form-inline " id="net_salary_employee">
+        <label class="control-label">صافي الراتب الشهري : <span class="star">*</span></label>
+        <input type="text" class="form-control employee-input required-employee" placeholder="صافي الراتب الشهري (دينار)" name="net_salary_employee" value="">
+    </div>
+
+    <div class="form-group form-inline hide_now" id="other_income_employee">
+        <label class="control-label">مصدر دخل اخر :</label>
+        <input type="text" class="form-control employee-input" placeholder="تحديد مصدر الدخل" name="other_income_employee" value="">
+    </div>
+
+    <div class="form-group form-inline hide_now" id="other_income_value_employee">
+        <label class="control-label">قيمة الدخل الاخر :</label>
+        <input type="text" class="form-control employee-input" placeholder="قيمة الدخل الاخر (دينار)" name="other_income_value_employee" value="">
+    </div>
+    </div>
+
+    <div id="other-related" style="">
+        <div class="form-group form-inline" id="employer_other">
+            <label class="control-label">جهة العمل :</label>
+            <input type="text" class="form-control other-input" placeholder="جهة العمل" name="employer_other" value="">
+        </div>
+
+        <div class="form-group form-inline hide_now" id="job_title_other">
+            <label class="control-label">الوظيفة :</label>
+            <input type="text" class="form-control other-input" placeholder="الوظيفة" name="job_title_other" value="">
+        </div>
+
+        <div class="form-group form-inline hide_now" id="work_phone_number_other">
+            <label class="control-label">هاتف العمل :</label>
+            <input type="text" class="form-control other-input" placeholder="هاتف العمل" name="work_phone_number_other" value="">
+        </div>
+
+        <div class="form-group form-inline " id="other_avg_inc">
+            <label class="control-label">معدل الدخل الشهري : <span class="star">*</span></label>
+            <input type="text" class="form-control other-input required-other" placeholder="معدل الدخل الشهري (دينار)" name="other_avg_inc" value="" required="required">
+        </div>
+
+        <div class="form-group form-inline" id="other_income_other">
+            <label class="control-label">مصدر دخل اخر :</label>
+            <input type="text" class="form-control other-input" placeholder="تحديد مصدر الدخل" name="other_income_other" value="">
+        </div>
+
+        <div class="form-group form-inline" id="other_income_value_other">
+            <label class="control-label">قيمة الدخل الاخر :</label>
+            <input type="text" class="form-control other-input" placeholder="قيمة الدخل الاخر (دينار)" name="other_income_value_other" value="">
+        </div>
+
+    </div>
+
+
+    <div id="employer-related" style="display: none;">
+    <div class="form-group form-inline " id="company_name">
+        <label class="control-label">اسم الشركة : <span class="star">*</span></label>
+        <input type="text" class="form-control employer-input required-employer" placeholder="اسم الشركة حسب السجل التجاري" name="company_name" value="" id="company_name_input">
+    </div>
+
+    <div class="form-group form-inline" id="company_nat_num">
+        <label class="control-label">الرقم الوطني للمنشأة :</label>
+        <input type="text" class="form-control employer-input" placeholder="الرقم الوطني للمنشأة" name="company_nat_num" value="">
+    </div>
+
+    <div class="form-group form-inline " id="company_mon_inc">
+        <label class="control-label">الدخل الشهري : <span class="star">*</span></label>
+        <input type="text" class="form-control employer-input required-employer" placeholder="الدخل الشهري (دينار)" name="company_mon_inc" value="">
+    </div>
+    </div>
+
+    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">التالي</button>
+
+</div>
+
+        </div>
+
+        <div class="row setup-content" id="step-4" style="display: none;">
+            <div class="col-sm-12">
+    <h3 class="field">معلومات القرض</h3>
+
+        
+    <div id="car_loan">
+        <div class="form-group form-inline " id="car_type">
+            <label class="control-label">نوع السيارة : <span class="star">*</span></label>
+            <input type="text" class="form-control required-car" placeholder="إختر نوع السيارة" name="car_type" required="" value="">
+        </div>
+
+         
+        <div class="form-group form-inline ">
+            <label class="control-label">حالة السيارة : <span class="star">*</span></label>
+            <select name="car_case" id="car_case" class="form-control required-car" required="">
+                <option value="" disabled="" selected="" hidden="">إختر حالة السيارة</option>n&gt;
+                <option value="جديدة">جديدة</option>
+                <option value="مستعملة">مستعملة</option>
+            </select>
+        </div>
+         
+
+        <div class="form-group form-inline " id="car_years_old" style="display: none;">
+            <label class="control-label">سنة الصنع : <span class="star">*</span></label>
+            <select name="manufacturing_year_old" id="manufacturing_year_old" class="form-control required-car" required="">
+                <option value="" disabled="" selected="" hidden="">إختر سنة الصنع</option>n&gt;
+                                    <option>2022</option>
+                                    <option>2021</option>
+                                    <option>2020</option>
+                                    <option>2019</option>
+                                    <option>2018</option>
+                                    <option>2017</option>
+                                    <option>2016</option>
+                                    <option>2015</option>
+                                    <option>2014</option>
+                                    <option>2013</option>
+                                    <option>2012</option>
+                                    <option>2011</option>
+                            </select>
+        </div>
+
+            
+        <div class="form-group form-inline " id="car_years_new" style="display: none;">
+            <label class="control-label">سنة الصنع : <span class="star">*</span></label>
+            <select name="manufacturing_year_new" id="manufacturing_year_new" class="form-control required-car" required="">
+                <option value="" disabled="" selected="" hidden="">إختر سنة الصنع</option>
+                                    <option>2023</option>
+                                    <option>2022</option>
+                                    <option>2021</option>
+                            </select>
+        </div>
+            
+
+        <div class="form-group form-inline ">
+            <label class="control-label">ثمن المركبة : <span class="star">*</span></label>
+            <input type="text" pattern="^[0-9\u0660-\u0669]+$" class="form-control required-car" placeholder="ثمن المركبة (دينار)" name="car_price" required="" id="car_price" value="">
+        </div>
+
+        <div class="form-group form-inline " id="first_pay">
+            <label class="control-label">الدفعة الاولى : <span class="star">*</span></label>
+            <input type="text" pattern="^[0-9\u0660-\u0669]+$" class="form-control required-car" placeholder="الدفعة الاولى (دينار)" name="first_pay" required="" id="first_pay_car" value="">
+            <span id="max_value_pay"></span>
+        </div>
+        
+        <div class="form-group form-inline " id="funded_car_validate">
+            <label class="control-label"> المبلغ الممول : <span class="star">*</span></label>
+            <input type="text" readonly="" class="form-control" placeholder="المبلغ الممول (دينار)" name="funded_amount_car" id="funded_amount_car" value="">
+            <input type="hidden" name="funded_amount_car_max" id="funded_amount_car_max" value="">
+            <span id="max_value_car"></span>
+        </div>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">نسبة التمويل (%) : <span class="star">*</span></label>
+            <input readonly="" type="text" step="0.01" class="form-control " placeholder="نسبة التمويل (%)" name="fund_ratio_car" id="fund_ratio_car" value="">
+        </div>
+
+        <div class="form-group form-inline " id="time_pay_car">
+            <label class="control-label">مدة التقسيط (شهر) : <span class="star">*</span></label>
+            <input type="text" id="car_range" name="range_value_car" required="" class="form-control required-car" value="">
+            <span class="errors_steps" id="car_range_error"></span>
+
+            
+            
+            
+        </div>
+
+        <div class="form-group form-inline" id="monthly_payment_car">
+            <label class="control-label">القسط الشهري :</label>
+            <input readonly="" type="text" step="0.01" class="form-control" placeholder="القسط الشهري" name="monthly_payment_car" id="qest_sayyara" value="">
+        </div>
+    </div>
+
+    <div id="estate_loan">
+        <div class="form-group form-inline " id="loan_purpose">
+            <label class="control-label">الغاية من القرض : <span class="star">*</span></label>
+            <input type="text" class="form-control required-estate" placeholder="الغاية من القرض" name="loan_purpose" required="" value="">
+        </div>
+        <div class="form-group form-inline ">
+            <label class="control-label">نوع الضمانة : <span class="star">*</span></label>
+            <select name="type_of_ens" id="type_of_ens" class="form-control required-estate" required="">
+                <option value="" disabled="" selected="" hidden="">إختر نوع الضمانة</option>
+                <option value="أرض">أرض</option>
+                <option value="شقة">شقة</option>
+                <option value="عقار تجاري">عقار تجاري</option>
+                <option value="أخرى">أخرى</option>
+            </select>
+        </div>
+        <div class="form-group form-inline ">
+            <label class="control-label">عمر العقار (سنة) : <span class="star">*</span></label>
+            <select name="estate_age" id="estate_age" class="form-control required-estate" required="">
+                <option value="" disabled="" selected="" hidden="">إختر عمر العقار</option>
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                    <option>11</option>
+                                    <option>12</option>
+                                    <option>13</option>
+                                    <option>14</option>
+                                    <option>15</option>
+                                    <option>16</option>
+                                    <option>17</option>
+                                    <option>18</option>
+                                    <option>19</option>
+                                    <option>20</option>
+                                    <option>21</option>
+                                    <option>22</option>
+                                    <option>23</option>
+                                    <option>24</option>
+                            </select>
+        </div>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">ثمن العقار : <span class="star">*</span></label>
+            <input type="text" pattern="^[0-9\u0660-\u0669]+$" class="form-control required-estate" placeholder="ثمن العقار (دينار)" name="estate_price" required="" id="estate_price" value="">
+        </div>
+
+        <div class="form-group form-inline ">
+            <label class="control-label">المنطقة : <span class="star">*</span></label>
+            <select name="city" id="city" class="form-control required-estate" required="">
+                <option value="" disabled="" selected="" hidden="">إختر المنطقة</option>
+                <option value="عمان">عمان</option>
+                <option value="اربد">اربد</option>
+                <option value="الزرقاء">الزرقاء</option>
+                <option value="العقبة">العقبة</option>
+                <option value="البلقاء">البلقاء</option>
+                <option value="مادبا">مادبا</option>
+            </select>
+        </div>
+
+        <div class="form-group form-inline " id="funded_estate_validate">
+            <label class="control-label">المبلغ الممول : <span class="star">*</span></label>
+            <input type="text" pattern="^[0-9\u0660-\u0669]+$" class="form-control required-estate" placeholder="المبلغ الممول (دينار)" name="funded_amount_estate" value="" id="funded_amount_estate">
+            <input type="hidden" name="funded_amount_estate_max" id="funded_amount_estate_max" value="">
+            <span id="max_value_estate"></span>
+        </div>
+
+        <div class="form-group form-inline ">
+            
+            <input type="hidden" step="0.01" class="form-control" placeholder="نسبة التمويل (%)" name="fund_ratio_estate" value="" id="fund_ratio_estate" readonly="">
+        </div>
+
+        <div class="form-group form-inline " id="time_pay_estate">
+            <label class="control-label">مدة التقسيط (شهر) : <span class="star">*</span></label>
+            <input type="text" id="estate_range" name="range_value_estate" value="" class="form-control required-estate" placeholder="مدة التقسيط" min="1">
+            <span id="max_value_month"></span>
+            
+            
+            
+        </div>
+
+        <div class="form-group form-inline" id="monthly_payment_estate">
+            <label class="control-label">القسط الشهري التقريبي :</label>
+            <input type="text" step="0.01" class="form-control" value="" placeholder="القسط الشهري (دينار)" name="monthly_payment_estate" id="qest_aqar" readonly="">
+        </div>
+    </div>
+
+
+    <div class="form-group form-inline ">
+        <label class="control-label">هل ترغب بإصدار بطاقة إئتمانية؟  <span class="star">*</span></label>
+        <select id="credit_card" class="form-control" name="credit_card" required="">
+            <option value="" selected="" disabled="" hidden="">اختر </option>
+            <option value="نعم">نعم</option>
+            <option value="لا">لا</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary nextBtn btn-lg pull-right" id="validate_car_fund" type="button">التالي</button>
+</div>
+
+
+        </div>
+
+        <div class="row setup-content" id="step-5" style="display: none;">
+            <div class="col-sm-12">
+    <h3 class="field">المرفقات</h3>
+
+    
+       <div class="form-group form-inline " id="front_id" style="display: none;">
+           <label class="control-label">صورة الهوية من الامام : <span class="star">*</span></label>
+           <input type="file" accept="image/*" class="form-control" name="front_id" id="front_id_input" capture="">
+       </div>
+
+       <div class="form-group form-inline " id="back_id" style="display: none;">
+           <label class="control-label"> صورة الهوية من الخلف :<span class="star">*</span></label>
+           <input type="file" accept="image/*" class="form-control" name="back_id" id="back_id_input" capture="">
+       </div>
+
+    
+        <div class="form-group form-inline " id="front_id_kafeel" style="display: none;">
+            <label class="control-label">صورة الهوية من الامام للكفيل : <span class="star">*</span></label>
+            <input type="file" accept="image/*" class="form-control" name="front_id_kafeel" id="front_id_kafeel_input" capture="">
+        </div>
+
+        <div class="form-group form-inline " id="back_id_kafeel" style="display: none;">
+            <label class="control-label"> صورة الهوية من الخلف  للكفيل :<span class="star">*</span></label>
+            <input type="file" accept="image/*" class="form-control" name="back_id_kafeel" id="back_id_kafeel_input" capture="">
+        </div>
+
+        <div class="form-group form-inline " id="family" style="">
+            <label class="control-label">صورة دفتر العائلة :</label>
+            <input type="file" accept="image/*" class="form-control" name="family" id="family_input">
+        </div>
+    
+
+    
+    <div class="form-group form-inline " id="passport" style="">
+        <label class="control-label">صورة جواز السفر : <span class="star">*</span></label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" name="passport" required="required" id="passport_input">
+    </div>
+    
+
+    <div class="form-group form-inline car-employer-related " style="display: none;">
+        <label class="control-label">السجل التجاري : <span class="star">*</span></label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control required-employer-car-estate" placeholder="السجل التجاري" name="sejel_tejari">
+    </div>
+
+    <div class="form-group form-inline car-employee-related " id="car-employee" style="">
+        <label class="control-label">شهادة راتب : </label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" placeholder="شهادة راتب" name="shahadet_rateb">
+    </div>
+
+    <div class="form-group form-inline car-related" id="test">
+        <label class="control-label">فحص و تخمين المركبة :</label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" placeholder="السجل التجاري" name="car_test">
+    </div>
+
+    <div id="estate-files">
+    <div class="form-group form-inline" id="license">
+        <label class="control-label">رخصة مهن :</label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" placeholder="رخصة مهن" name="job_license">
+    </div>
+
+    <div class="form-group form-inline " id="sanad_aqar">
+        <label class="control-label">سند تسجيل العقار : <span class="star">*</span></label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control required-estate" name="sanad_aqar" required="">
+    </div>
+
+    
+    <div class="form-group form-inline">
+        <label class="control-label">مخطط موقع تنظيمي : <span class="star">*</span></label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control required-estate" name="mukhattat_mawke3" required="">
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">مخطط اراضي : </label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" name="mukhattat_aradee">
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">إذن إشغال : </label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" name="ezen">
+    </div>
+    
+    </div>
+
+    <div class="form-group form-inline">
+        <label class="control-label">مرفقات أخرى :</label>
+        <input type="file" accept="image/jpeg,image/png,application/pdf" class="form-control" placeholder="السجل التجاري" name="more_file[]" multiple="">
+    </div>
+
+    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">التالي</button>
+</div>
+
+
+
+        </div>
+
+        <div class="row setup-content" id="step-6" style="display: none;">
+            <div class="col-sm-12">
+    <h3 class="field">الشروط والاحكام</h3>
+
+    <h4>تفويض كريف عن العميل</h4>
+    
+    <div class="form-group form-inline ">
+        <label class="control-label date-label">التاريخ : <span class="star">*</span></label>
+        <input type="text" readonly="" class="form-control date-input" placeholder="التاريخ" name="date" value="2022-11-25">
+    </div>
+
+    <div class="crif_p">
+        <p>السادة شركة التسهيلات التجارية الاردنية المحترمين ،،،</p>
+        <p>تحية واحترام ،،،،،</p>
+        <p class="text-justify"> انا الموقع ادناه افوض شركة التسهيلات التجارية الاردنية بالاستعلام و/او الافصاح و/او تزويد و/او تبادل
+            المعلومات الائتمانية
+            سواء بصفتي مدينا و/او كفيلا و/او شريك في شركة وذلك لدى كافة البنوك و/او الشركات المرخصة
+            وفقا
+            لاحكام قانون المعلومات الائتمانية على سيبل المثال شركة كريف الاردن او مؤسسة الضمان الاجتماعي عن طريق اي جهة
+            اخرى يراها
+            مناسبة ولدى وحدة الشيكات المرتجعة ونظام مركزية المخاطر المصرفية لدى البنك المركزي كما
+            نوافق على
+            تزويد الجهات اعلاه بمعلومات التزاماتي الشخصية والالتزامات المترتبة على الشركة
+            التي انا شريكا
+            فيها وعن البيانات الائتمانية المتعلقة بي سواء بصفتي مدينا و/او كفيلا و/او شريك في شركة
+            بما في ذلك على
+            سبيل المثال لا الحصر التسهيلات الائتمانية الممنوحة لي و/او التي ستمنح لي من حيث نوعها
+            و/او مقدارها
+
+            و/او تاريخ استحقاقها و/او الشروط و/او الضمانات المتعلقة بها بكافة انواعها والية تسديدها
+            و/او مدى التزامنا
+            بذلك و/او اي معلومات اخرى تطلبها وافوض البنك بالاستعلام و/او الافصاح وا/و تزويد و/او
+            تبادل المعلومات
+            الشخصية المتعلقة بي شخصياً كمدين و/او ككفيل ، وذلك على مسؤوليتي الكاملة
+             ويعتبر كتابنا هذا موافقة وتفويضا غير مشروط وغير قابل للرجوع عنه ومستمرا ولا حاجة
+            لتوقيع اي
+            تفويض اخر مستقلا.</p>
+        <p>علما انه تم اعلامي بحقي بالاطلاع على معلوماتي الائتمانية المستخرجة من نظام الاستعلام
+            الائتماني (كريف) والاعتراض عليها وتصحيحها في حال وجود اي خطأ صادر  عن شركة التسهيلات التجارية الاردنية .</p>
+        <p>و اقر ان التوقيع على النموذج هو توقيعي و قمت بتوقيعه بنفسي و تم ارساله الى شركة التسهيلات التجارية الاردنية من الهاتف الشخصي العائد لي و اتحمل كامل المسوولية القانونية اذا تبين خلاف ذلك.</p>
+    </div>
+
+    
+
+    <div class="form-group" style="margin-top: 20px;">
+        <p class="terms_p"><input type="checkbox" name="terms" id="terms" required="" oninvalid="this.setCustomValidity('الرجاء الموافقة على الشروط والأحكام للاستمرار')" oninput="this.setCustomValidity('')"> لقد قمت بقراءه المحتوى و اوافق على جميع الشروط و الأحكام</p>
+    </div>
+
+    <div id="has-name-and-signature">
+        <div class="form-group form-inline ">
+            <label class="control-label crif_name_style">الاسم : <span class="star">*</span></label>
+            <input name="crif_name" id="crif_name" type="text" value="" required="" class="form-control" style="width:76%!important;">
+        </div>
+
+        <div class="form-group ">
+            <label class="control-label crif_name_style">التوقيع : <span class="star">*</span></label>
+            <div id="signature-pad" class="signature-pad" style="width:76%">
+                <div class="signature-pad--body">
+                    <canvas id="imageSign" width="301" style="touch-action: none;" height="237"></canvas>
+                </div>
+                <input type="hidden" name="signature" id="sign" value="" required="required">
+                <div class="signature-pad--footer">
+                    <div class="signature-pad--actions">
+                        <div>
+                            <button type="button" class="button clear" data-action="clear" id="clearSign">Clear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+        
+        <div id="crif_employer" style="display: none;">
+            <div class="col-sm-12">
+                <h4>تفويض كريف عن الشركة</h4>
+                <div class="form-group form-inline ">
+                    <label class="control-label date-label">التاريخ : <span class="star">*</span></label>
+                    <input type="text" readonly="" class="form-control date-input" placeholder="التاريخ" name="date" value="2022-11-25">
+                </div>
+                <div class="crif_p">
+                    <p>السادة شركة التسهيلات التجارية الاردنية المحترمين ،،،</p>
+                    <p>تحية واحترام ،،،،،</p>
+                    <p class="text-justify"> انا الموقع ادناه افوض شركة التسهيلات التجارية الاردنية بالاستعلام و/او الافصاح و/او تزويد و/او تبادل
+                        المعلومات الائتمانية
+                        سواء بصفتي مدينا و/او كفيلا و/او شريك في شركة وذلك لدى كافة البنوك و/او الشركات المرخصة
+                        وفقا
+                        لاحكام قانون المعلومات الائتمانية على سيبل المثال شركة كريف الاردن او مؤسسة الضمان الاجتماعي عن طريق اي جهة
+                        اخرى يراها
+                        مناسبة ولدى وحدة الشيكات المرتجعة ونظام مركزية المخاطر المصرفية لدى البنك المركزي كما
+                        نوافق على
+                        تزويد الجهات اعلاه بمعلومات التزاماتي الشخصية والالتزامات المترتبة على الشركة
+                        التي انا شريكا
+                        فيها وعن البيانات الائتمانية المتعلقة بي سواء بصفتي مدينا و/او كفيلا و/او شريك في شركة
+                        بما في ذلك على
+                        سبيل المثال لا الحصر التسهيلات الائتمانية الممنوحة لي و/او التي ستمنح لي من حيث نوعها
+                        و/او مقدارها
+
+                        و/او تاريخ استحقاقها و/او الشروط و/او الضمانات المتعلقة بها بكافة انواعها والية تسديدها
+                        و/او مدى التزامنا
+                        بذلك و/او اي معلومات اخرى تطلبها وافوض البنك بالاستعلام و/او الافصاح وا/و تزويد و/او
+                        تبادل المعلومات
+                        الشخصية المتعلقة بي شخصياً كمدين و/او ككفيل ، وذلك على مسؤوليتي الكاملة
+                        ويعتبر كتابنا هذا موافقة وتفويضا غير مشروط وغير قابل للرجوع عنه ومستمرا ولا حاجة
+                        لتوقيع اي
+                        تفويض اخر مستقلا.</p>
+                    <p>علما انه تم اعلامي بحقي بالاطلاع على معلوماتي الائتمانية المستخرجة من نظام الاستعلام
+                        الائتماني (كريف) والاعتراض عليها وتصحيحها في حال وجود اي خطأ صادر  عن شركة التسهيلات التجارية الاردنية .</p>
+                    <p>و اقر ان التوقيع على النموذج هو توقيعي و قمت بتوقيعه بنفسي و تم ارساله الى شركة التسهيلات التجارية الاردنية من الهاتف الشخصي العائد لي و اتحمل كامل المسوولية القانونية اذا تبين خلاف ذلك.</p>
+                </div>
+
+                <div class="form-group" style="margin-top: 20px;">
+                    <p class="terms_p"><input class="crif_2_input" type="checkbox" value="" name="terms_2" id="terms_2" oninvalid="this.setCustomValidity('الرجاء الموافقة على الشروط والأحكام للاستمرار')" oninput="this.setCustomValidity('')"> لقد قمت بقراءه المحتوى و اوافق على جميع الشروط و الأحكام</p>
+                </div>
+
+                <div id="has-name-and-signature">
+                    <div class="form-group form-inline ">
+                        <label class="control-label crif_name_style">الشركة: <span class="star">*</span></label>
+                        <input name="crif_name_2" id="crif_name_2" type="text" value="" class="form-control crif_2_input" style="width:76%!important;">
+                    </div>
+
+                    <div class="form-group form-inline ">
+                        <label class="control-label crif_name_style">المفوض:<span class="star">*</span></label>
+                        <input name="crif_name_3" id="crif_name_3" type="text" value="" class="form-control crif_2_input" style="width:76%!important;">
+                    </div>
+
+                    <div class="form-group ">
+                        <label class="control-label crif_name_style">التوقيع : <span class="star">*</span></label>
+                        <div id="signature-pad" class="signature-pad" style="width:76%">
+                            <div class="signature-pad--body">
+                                <canvas id="imageSign2" style="touch-action: none;"></canvas>
+                            </div>
+                            <input type="hidden" name="signature_2" id="sign_2" value="" class="crif_2_input">
+                            <div class="signature-pad--footer">
+                                <div class="signature-pad--actions">
+                                    <div>
+                                        <button type="button" class="button clear" data-action="clear" id="clearSign2">Clear</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+
+            <div id="loader">
+            </div>
+            <button class="btn btn-primary btn-lg pull-left submit-now" id="GenPDF" type="submit">تقديم الطلب</button>
+        </div>
+
+
+
+        </div>
+    </form>
+    <hr style="background-color:#b38806; height:1px;">
+    <p class="text-center">
+        <span>Copyright © 2022 Fareza. All rights reserved</span>
+        <br>
+        Powered By:
+        <a href="https://fareza.net">
+            <span style="color:#FAA61A">Accu</span>
+            <span style="color:#0F5DA9">Solutions</span>
+        </a>
+        Amman Jordan Web Design and Mobile Applicaiton Development
+    </p>
+</div>
+
+<script src="https://app.altas-heelat.com/js/form2.js"></script>
+<script src="https://app.altas-heelat.com/js/fields.js"></script>
+<script src="https://app.altas-heelat.com/js/signature_pad.umd.js"></script>
+<script src="https://app.altas-heelat.com/js/app2.js"></script>
+
+
+
+
+
+    <script>
+        //second
+        $('#otp').click(function(event){
+            if($('#mobile_number').val() !== '' && /(07|\u0660\u0667)[7-9\u0667-\u0669][0-9\u0660-\u0669]{7}/.test($('#mobile_number').val())){//
+                if ($('#otp_code').val() === '') {
+                    $('#otp_div').addClass('has-error');
+                    $("#myModal2").modal('show');
+                    $("#otp_message").html('الرجاء ادخال رمز التحقق المرسل برسالة نصية الى' + $('#mobile_number').val());
+                    $.ajax({
+                        url: "/otp",
+                        type: "get",
+                        data: {
+                            number: arabicNumbers( $('#mobile_number').val() ),
+                        },
+                        success: function (response) {
+                            var otpCode = response.otp;
+                            $('#hidden_otp').val(otpCode);
+
+                        }
+                    });
+                } else {
+                    return true;
+                }
+            }
+        });
+
+        $('#check_otp').click(function(){
+            if( $('#hidden_otp').val() == $('#otp_code').val()){
+                // $('#otp_error').html('تم تأكيد رمز التحقق, يمكنك الإستمرار بتقديم طلبك  بالضغط على التالي');
+                $('#otp_div').removeClass('has-error');
+                $("#myModal2").modal('hide');
+            }else {
+                $('#otp_error').html('رمز التحقق غير صحيح');
+                $('#otp_div').addClass('has-error');
+                $('#otp_code').val('');
+            }
+        });
+
+        $('#close_otp').click(function(){
+            $("#myModal2").modal('hide');
+            if( $('#hidden_otp').val() == $('#otp_code').val()){
+                $('#otp_error').html('تم تأكيد رمز التحقق, يمكنك الإستمرار بتقديم طلبك بالضغط على التالي');
+                $('#otp_div').removeClass('has-error');
+            }else {
+                $('#otp_error').html('رمز التحقق غير صحيح');
+                $('#otp_div').addClass('has-error');
+                $('#otp_code').val('');
+            }
+        });
+
+       
+
+    </script>
+
+    <script>
+        function updateTextInput(val) {
+            document.getElementById('car_range').value=val;
+        }
+        function updateTextInput2(val) {
+            document.getElementById('estate_range').value=val;
+        }
+
+        //car loan
+        var carPrice = "";
+        var firstPay = "";
+        var maxCarFund = "";
+        var maxCarFundVal = "";
+        var fundRatioCar ="";
+        var carFund = "";
+        var carRange = "";
+        var qestSayyara ="";
+
+        $("#car_price").keyup(function(event){
+         
+            var FixedNum = arabicNumbers($("#car_price").val());
+            $(this).val(FixedNum);
+            carPrice = FixedNum;//here
+            console.log(carPrice);
+            firstPay = parseFloat($("#first_pay_car").val());
+            maxCarFund = $("#funded_amount_car_max").val(carPrice - firstPay);
+            maxCarFundVal = $("#funded_amount_car_max").val();
+            $("#funded_amount_car").val(carPrice - firstPay);//readonly
+            carFund = parseFloat($("#funded_amount_car").val());
+            carRange =  parseFloat($("#car_range").val());
+            fundRatioCar = $("#fund_ratio_car").val((carFund / carPrice *100).toFixed(2));
+            qestSayyara = $("#qest_sayyara").val((((carFund * 0.1 * (carRange / 12)) + carFund) / carRange).toFixed(2)); //after call
+
+            if(carFund){
+                if(carFund > maxCarFundVal  && maxCarFundVal > 0 ){
+                    $("#funded_car_validate").addClass('has-error');
+                    $("#validate_car_fund").attr('disabled', 'true');
+                    $("#max_value_car").html('الحد الأعلى المسموح لك هو ' +  (carPrice - firstPay) + 'دينار ');
+                }else {
+                    $("#max_value_car").html('');
+                    $("#funded_car_validate").removeClass('has-error');
+                    $("#validate_car_fund").removeAttr('disabled');
+                }
+            }
+
+            if(maxCarFundVal < 0){
+                $("#max_value_pay").html(' الدفعة الاولى يجب ان تكون اصغر من ثمن المركبة');
+                $("#max_value_car").html(' ');
+                $("#first_pay").addClass('has-error'); //new
+                $("#funded_amount_car").val('');//readonly
+                $("#fund_ratio_car").val('');
+                $("#validate_car_fund").attr('disabled', 'true');
+            }else {
+                $("#max_value_pay").html('');
+                $("#first_pay").removeClass('has-error');//new
+                $("#validate_car_fund").removeAttr('disabled');
+            }
+
+            if(isNaN($("#funded_amount_car").val())){
+                $("#funded_amount_car").val('');
+            }
+            if(isNaN($("#fund_ratio_car").val())){
+                $("#fund_ratio_car").val('');
+            }
+            if(isNaN($("#qest_sayyara").val()) || $("#qest_sayyara").val() == "Infinity"){
+                $("#qest_sayyara").val('');
+            }
+
+        });
+
+
+
+        $("#first_pay_car").keyup(function(event){
+           
+
+            //arabic
+            var FixedNum = arabicNumbers($("#first_pay_car").val());
+            $(this).val(FixedNum);
+            carPrice = parseFloat($("#car_price").val());
+            firstPay = parseFloat(FixedNum);//here
+            maxCarFund = $("#funded_amount_car_max").val(carPrice - firstPay);
+            maxCarFundVal = $("#funded_amount_car_max").val();
+            $("#funded_amount_car").val(carPrice - firstPay);//readonly
+            carFund = parseFloat($("#funded_amount_car").val());
+            carRange =  parseFloat($("#car_range").val());
+            fundRatioCar = $("#fund_ratio_car").val((carFund / carPrice *100).toFixed(2));
+            qestSayyara = $("#qest_sayyara").val((((carFund * 0.1 * (carRange / 12)) + carFund) / carRange).toFixed(2)); //after call
+
+            if(carFund){
+                if(carFund > maxCarFundVal  && maxCarFundVal > 0){
+                    $("#funded_car_validate").addClass('has-error');
+                    $("#validate_car_fund").attr('disabled', 'true');
+                    $("#max_value_car").html('الحد الأعلى المسموح لك هو ' +  (carPrice - firstPay) + 'دينار ');
+                }else {
+                    $("#max_value_car").html('');
+                    $("#funded_car_validate").removeClass('has-error');
+                    $("#validate_car_fund").removeAttr('disabled');
+                }
+            }
+
+            //new changes
+            if($('#car_case').val() == 'مستعملة' && firstPay < (carPrice*0.25)){
+                $("#first_pay").addClass('has-error');
+                $("#validate_car_fund").attr('disabled', 'true');
+                $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 25% من ثمن المركبة كحد أدنى');
+            }else if($('#car_case').val() == 'جديدة' && firstPay < (carPrice*0.1)){
+                $("#first_pay").addClass('has-error');
+                $("#validate_car_fund").attr('disabled', 'true');
+                $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 10% من ثمن المركبة كحد أدنى');
+            } else{
+                $("#first_pay").removeClass('has-error');
+                $("#validate_car_fund").removeAttr('disabled');
+            }
+            //new changes
+
+            if(maxCarFundVal < 0){
+                $("#max_value_pay").html(' الدفعة الاولى يجب ان تكون اصغر من ثمن المركبة');
+                $("#funded_amount_car").val('');//readonly
+                $("#max_value_car").html(' ');
+                $("#first_pay").addClass('has-error'); //new
+                $("#fund_ratio_car").val('');
+                $("#validate_car_fund").attr('disabled', 'true');
+            }
+
+            if(isNaN($("#funded_amount_car").val())){
+                $("#funded_amount_car").val('');
+            }
+            if(isNaN($("#fund_ratio_car").val())){
+                $("#fund_ratio_car").val('');
+            }
+            if(isNaN($("#qest_sayyara").val()) || $("#qest_sayyara").val() == "Infinity" ){
+                $("#qest_sayyara").val('');
+            }
+        });
+
+
+
+        $("#funded_amount_car").change(function(event){
+          
+            //arabic
+            carPrice = parseFloat($("#car_price").val());
+            firstPay = parseFloat($("#first_pay_car").val());
+            $("#funded_amount_car").val(carPrice - firstPay);//read only
+            carFund = parseFloat($("#funded_amount_car").val());
+            fundRatioCar = $("#fund_ratio_car").val((carFund / carPrice *100).toFixed(2));
+            carRange =  parseFloat($("#car_range").val());
+            maxCarFund = $("#funded_amount_car_max").val(carPrice - firstPay);
+            maxCarFundVal = $("#funded_amount_car_max").val();
+            qestSayyara = $("#qest_sayyara").val((((carFund * 0.1 * (carRange / 12)) + carFund) / carRange).toFixed(2)); //after call
+
+            if(carFund > maxCarFundVal && maxCarFundVal > 0){
+                $("#funded_car_validate").addClass('has-error');
+                $("#validate_car_fund").attr('disabled', 'true');
+                $("#max_value_car").html('الحد الأعلى المسموح لك هو ' +  (carPrice - firstPay) + 'دينار ');
+            }else {
+                $("#max_value_car").html('');
+                $("#funded_car_validate").removeClass('has-error');
+                $("#validate_car_fund").removeAttr('disabled');
+
+            }
+
+        });
+
+        $("#car_range").keyup(function(event){
+           
+            var FixedNum = arabicNumbers($("#car_range").val());
+            $(this).val(FixedNum);
+            carRange =  parseFloat(FixedNum);//here
+            qestSayyara = $("#qest_sayyara").val((((carFund * 0.1 * (carRange / 12)) + carFund) / carRange).toFixed(2));
+            //bar
+            $('#select_range_car').val(carRange);
+
+            if(isNaN($("#funded_amount_car").val())){
+                $("#funded_amount_car").val('');
+            }
+            if(isNaN($("#fund_ratio_car").val())){
+                $("#fund_ratio_car").val('');
+            }
+            if(isNaN($("#qest_sayyara").val()) || $("#qest_sayyara").val() == "Infinity"){
+                $("#qest_sayyara").val('');
+            }
+        });
+
+        $('#select_range_car').change(function(){
+            carFund = parseFloat($("#funded_amount_car").val());
+            carRange =  parseFloat($("#car_range").val());
+            qestSayyara = $("#qest_sayyara").val((((carFund * 0.1 * (carRange / 12)) + carFund) / carRange).toFixed(2));
+        });
+        //car loan
+
+        // arabic numbers uncomment, mesh zabt 3endi
+        function arabicNumbers(str) {
+            return str.replace(/[٠١٢٣٤٥٦٧٨٩]/g, function (d) {
+                return d.charCodeAt(0) - 1632; // Convert Arabic numbers
+            })
+        }
+
+        //estate loan
+        var city = "";
+        var estatePrice = "";
+        var maxEstateFund = "";
+        var maxEstateFundVal = "";
+        var estateFund = "";
+        var estateRange = "";
+        var qestAqar ="";
+
+        $("#city").change(function(){
+            city = $("#city").val();
+            estatePrice = parseFloat($("#estate_price").val());
+            if (city === "عمان"){
+                $("#fund_ratio_estate").val(35);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.35)
+            }else if (city ===  "اربد" || city ===  "الزرقاء" || city ===  "مادبا"){
+                $("#fund_ratio_estate").val(25);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.25)
+            }else if (city ===  "البلقاء" || city ===  "العقبة") {
+                $("#fund_ratio_estate").val(30);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.3)
+            }
+            maxEstateFundVal = $("#funded_amount_estate_max").val();
+            if(estateFund){
+                if(estateFund > maxEstateFundVal){
+                    $("#funded_estate_validate").addClass('has-error');
+                    $("#validate_car_fund").attr('disabled', 'true');
+                }else {
+                    $("#max_value_estate").html('');
+                    $("#funded_estate_validate").removeClass('has-error');
+                    $("#validate_car_fund").removeAttr('disabled');
+                }
+                $("#max_value_estate").html('الحد الأعلى المسموح لك هو ' +  maxEstateFundVal + 'دينار ');
+            }
+        });
+
+        $("#estate_price").keyup(function(event){
+            //arabic
+            // var char = event.which || event.keyCode;
+            // //console.log('XX: '+String.fromCharCode(char));
+            // var OLDValueInText = $("#estate_price").val();
+            // //console.log('YY: '+OLDValueInText);
+            // var FixedNum = arabicNumbers(OLDValueInText+String.fromCharCode(char));
+            // var EngNumbers = ['0','1','2','3','4','5','6','7','8','9'];
+            // if(EngNumbers.includes(String.fromCharCode(char))){
+            //
+            // }else{
+            //     $(this).val(FixedNum);
+            // }
+            //arabic
+            var FixedNum = arabicNumbers($("#estate_price").val());
+            $(this).val(FixedNum);
+            estatePrice = parseFloat(FixedNum);//here
+            city = $("#city").val();
+            if (city === "عمان"){
+                $("#fund_ratio_estate").val(35);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.35)
+            }else if (city ===  "اربد" || city ===  "الزرقاء" || city ===  "مادبا"){
+                $("#fund_ratio_estate").val(25);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.25)
+            }else if (city ===  "البلقاء" || city ===  "العقبة") {
+                $("#fund_ratio_estate").val(30);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.2)
+            }
+            maxEstateFundVal = $("#funded_amount_estate_max").val();
+            if(estateFund){
+                if(estateFund > maxEstateFundVal){
+                    $("#funded_estate_validate").addClass('has-error');
+                    $("#validate_car_fund").attr('disabled', 'true');
+                }else {
+                    $("#max_value_estate").html('');
+                    $("#funded_estate_validate").removeClass('has-error');
+                    $("#validate_car_fund").removeAttr('disabled');
+                }
+                $("#max_value_estate").html('الحد الأعلى المسموح لك هو ' +  maxEstateFundVal + 'دينار ');
+            }
+        });
+
+        $("#funded_amount_estate").keyup(function(event){
+           
+            var FixedNum = arabicNumbers($("#funded_amount_estate").val());
+            $(this).val(FixedNum);
+            estateFund = parseFloat(FixedNum);//here
+            estateRange = parseFloat($("#estate_range").val());
+            if (city === "عمان"){
+                $("#fund_ratio_estate").val(35);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.35)
+            }else if (city ===  "اربد" || city ===  "الزرقاء" || city ===  "مادبا"){
+                $("#fund_ratio_estate").val(25);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.25)
+            }else if (city ===  "البلقاء" || city ===  "العقبة") {
+                $("#fund_ratio_estate").val(30);
+                maxEstateFund = $("#funded_amount_estate_max").val(estatePrice * 0.2)
+            }
+            maxEstateFundVal = $("#funded_amount_estate_max").val();
+
+            if(estateFund > maxEstateFundVal){
+                $("#funded_estate_validate").addClass('has-error');
+                $("#validate_car_fund").attr('disabled', 'true');
+            }else {
+                $("#max_value_estate").html('');
+                $("#funded_estate_validate").removeClass('has-error');
+                $("#validate_car_fund").removeAttr('disabled');
+            }
+            $("#max_value_estate").html('الحد الأعلى المسموح لك هو ' +  maxEstateFundVal + 'دينار ');
+            qestAqar = $("#qest_aqar").val((((estateFund * 0.0648 * (estateRange / 12)) + estateFund) / estateRange).toFixed(2));
+
+            if(isNaN($("#qest_aqar").val()) || $("#qest_aqar").val() == "Infinity"){
+                $("#qest_aqar").val('');
+            }
+        });
+
+        $("#estate_range").keyup(function(event) {
+           
+            var FixedNum = arabicNumbers($("#estate_range").val());
+            $(this).val(FixedNum);
+            estateFund = parseFloat($("#funded_amount_estate").val());
+            estateRange = parseFloat(FixedNum);//here
+            qestAqar = $("#qest_aqar").val((((estateFund * 0.0648 * (estateRange / 12)) + estateFund) / estateRange).toFixed(2));
+            //bar
+            $('#select_range_estate').val(estateRange);
+
+            if(isNaN($("#qest_aqar").val()) || $("#qest_aqar").val() == "Infinity"){
+                $("#qest_aqar").val('');
+            }
+        });
+
+        $('#select_range_estate').change(function(){
+            estateFund = parseFloat($("#funded_amount_estate").val());
+            estateRange = parseFloat($("#estate_range").val());
+            qestAqar = $("#qest_aqar").val((((estateFund * 0.0648 * (estateRange / 12)) + estateFund) / estateRange).toFixed(2));
+        });
+        //estate loan
+        //estate age
+        var estateAge = "";
+        var maxAccepted = "";
+        $('#estate_age').change(function(){
+            estateAge = $('#estate_age').val();
+            maxAccepted = 300 - (estateAge * 12);
+            //new
+            if(maxAccepted > 120){
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-8][0-9]|9[0-9]|1[01][0-9]|120)');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '120' + ' شهر ');
+            }else if(maxAccepted == 108) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-8][0-9]|9[0-9]|10[0-8])');
+                $("#max_value_month").html('الحد الأعلىالحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '108' + ' شهر ');
+            }else if(maxAccepted == 96) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-8][0-9]|9[0-6])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '96' + ' شهر ');
+            }else if(maxAccepted == 84) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-7][0-9]|8[0-4])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '84' + ' شهر ');
+            }else if(maxAccepted == 72) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-6][0-9]|7[0-2])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '72' + ' شهر ');
+            }else if(maxAccepted == 60) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-5][0-9]|60)');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '60' + ' شهر ');
+            }else if(maxAccepted == 48) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[1-3][0-9]|4[0-8])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '48' + ' شهر ');
+            }else if(maxAccepted == 36) {
+                $("#estate_range").attr('pattern', '0*([1-9]|[12][0-9]|3[0-6])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '36' + ' شهر ');
+            }else if(maxAccepted == 24) {
+                $("#estate_range").attr('pattern', '0*([1-9]|1[0-9]|2[0-4])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '24' + ' شهر ');
+            }else if(maxAccepted == 12) {
+                $("#estate_range").attr('pattern', '0*([1-9]|1[0-2])');
+                $("#max_value_month").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '12' + ' شهر ');
+            }
+            //new
+        });
+        // estate age
+        // arabic numbers
+
+        //new changes
+        // var year ="";
+        // $('#manufacturing_year').change(function(){
+        //     year = $('#manufacturing_year').val();
+        //
+        //     if(year == '2009'){
+        //         $("#car_range").attr('pattern', '0*([1-9]|1[0-2])');
+        //         $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '12' + ' شهر ');
+        //     }else if(year == '2010'){
+        //         $("#car_range").attr('pattern', '0*([1-9]|1[0-9]|2[0-4])');
+        //         $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '24' + ' شهر ');;
+        //     }else if(year == '2011'){
+        //         $("#car_range").attr('pattern', '0*([1-9]|[12][0-9]|3[0-6])');
+        //         $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '36' + ' شهر ');
+        //     }else if(year == '2012'){
+        //         $("#car_range").attr('pattern', '0*([1-9]|[1-3][0-9]|4[0-8])');
+        //         $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '48' + ' شهر ');
+        //     }else if(year >= '2013'){
+        //         $("#car_range").attr('pattern', '0*([1-9]|[1-5][0-9]|60)');
+        //         $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '60' + ' شهر ');
+        //     }
+        // });
+
+        $('#car_years_new').hide(100);
+        $('#car_years_old').hide(100);
+        $('#car_case').change(function(){
+           if ($('#car_case').val() == 'جديدة'){
+               $('#car_years_new').show(100);
+               $("#manufacturing_year_new").attr("required", true);
+               $('#car_years_old').hide(100);
+               $("#manufacturing_year_old").removeAttr("required");
+               $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 10% من ثمن المركبة كحد أدنى');
+
+               if($('#first_pay_car').val() < $('#car_price').val() * 0.1){
+                   $("#first_pay").addClass('has-error');
+                   $("#validate_car_fund").attr('disabled', 'true');
+                   $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 10% من ثمن المركبة كحد أدنى');
+               }else{
+                   $("#first_pay").removeClass('has-error');
+                   $("#validate_car_fund").removeAttr('disabled');
+               }
+
+               $('#manufacturing_year_new').change(function(){
+                   $("#car_range").attr('pattern', '0*([1-9]|[1-6][0-9]|7[0-2])');
+                   $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '72' + ' شهر ');
+               });
+           }else {
+               $('#car_years_new').hide(100);
+               $("#manufacturing_year_new").removeAttr("required");
+               $('#car_years_old').show(100);
+               $("#manufacturing_year_old").attr("required", true);
+               $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 25% من ثمن المركبة كحد أدنى');
+
+               if($('#first_pay_car').val() < $('#car_price').val() * 0.25){
+                   $("#first_pay").addClass('has-error');
+                   $("#validate_car_fund").attr('disabled', 'true');
+                   $("#max_value_pay").html(' يجب إدخال دفعة أولى بقيمة 10% من ثمن المركبة كحد أدنى');
+               }else{
+                   $("#first_pay").removeClass('has-error');
+                   $("#validate_car_fund").removeAttr('disabled');
+               }
+               $('#manufacturing_year_old').change(function(){
+                   if($('#manufacturing_year_old').val() == '2009'){
+                       $("#car_range").attr('pattern', '0*([1-9]|1[0-2])');
+                       $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '12' + ' شهر ');
+                   }else if($('#manufacturing_year_old').val() == '2010'){
+                       $("#car_range").attr('pattern', '0*([1-9]|1[0-9]|2[0-4])');
+                       $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '24' + ' شهر ');
+                   }else if($('#manufacturing_year_old').val()== '2011'){
+                       $("#car_range").attr('pattern', '0*([1-9]|[12][0-9]|3[0-6])');
+                       $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى ' + '36' + ' شهر ');
+                   }else if($('#manufacturing_year_old').val() == '2012'){
+                       $("#car_range").attr('pattern', '0*([1-9]|[1-3][0-9]|4[0-8])');
+                       $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '48' + ' شهر ');
+                   }else if($('#manufacturing_year_old').val() >= '2013'){
+                       $("#car_range").attr('pattern', '0*([1-9]|[1-5][0-9]|60)');
+                       $("#car_range_error").html('الحد الاأدنى المسموح لك هو شهر واحد والأعلى  ' + '60' + ' شهر ');
+                   }
+               });
+           }
+        });
+        //new changes
+    </script>
+
+    <script src="">
+        function capture(video, canvas, image, captureButton, stopButton, snapshotButton) {
+            var ctx = canvas.getContext('2d');
+            var localMediaStream = null;
+
+            captureButton.disabled = true;
+            stopButton.disabled = false;
+            snapshotButton.disabled = false;
+
+            stopButton.onclick = function () {
+                stop(video);
+            };
+
+            window.URL = window.URL || window.webkitURL;
+            navigator.getUserMedia  = navigator.getUserMedia || navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia || navigator.msGetUserMedia;
+
+            var constraints = {
+                video: true
+            }
+
+            var successCallback = function(mediaStream) {
+                video.src = (window.URL && window.URL.createObjectURL(mediaStream)) || mediaStream;
+                video.addEventListener("loadedmetadata", function(e) {
+                    video.style.display = "block";
+                    localMediaStream = mediaStream;
+                    snapshotButton.onclick = function(event) {
+                        takePhoto();
+                    }
+                });
+            };
+
+            var errorCallback = function() {
+                console.log("failure to get media");
+            };
+
+            var takePhoto = function () {
+                ctx.drawImage(video, 0, 0, 100, 75);
+                canvas.style.display = "block";
+                showImage();
+            };
+
+            var showImage = function () {
+                image.src = canvas.toDataURL('image/webp');
+                image.style.display = "block";
+            };
+
+            var stop = function () {
+                if (localMediaStream) {
+                    localMediaStream.stop(); /* TODO: it doesn't work in Opera Mobile 12 */
+                }
+
+                captureButton.disabled = false;
+                stopButton.disabled = true;
+                snapshotButton.disabled = true;
+            };
+
+            if (navigator.getUserMedia) {
+                navigator.getUserMedia(constraints, successCallback, errorCallback);
+            } else {
+                console.log("getUserMedia not supported");
+            }
+        }
+
+
+        function init() {
+            var video = document.querySelector('video#getUserMedia');
+            var canvas = document.querySelector('#canvas');
+            var snapshot = document.querySelector('#snapshot');
+            var captureButton = document.querySelector('#captureButton');
+            var stopButton = document.querySelector('#stopButton');
+            var snapshotButton = document.querySelector('#snapshotButton');
+
+            captureButton.onclick = function () {
+                capture(video, canvas, snapshot, captureButton, stopButton, snapshotButton);
+            };
+        }
+    </script>
+
+
+    <script>
+        $(function() {
+            var signaturePad = new SignaturePad(document.getElementById('imageSign'), {
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                penColor: 'rgb(0, 0, 0)'
+            });
+            var saveButton = document.getElementById('GenPDF');
+            var cancelButton = document.getElementById('clearSign');
+
+            //new
+            var signaturePad2 = new SignaturePad(document.getElementById('imageSign2'), {
+                backgroundColor: 'rgba(255, 255, 255, 0)',
+                penColor: 'rgb(0, 0, 0)'
+            });
+
+            var cancelButton2 = document.getElementById('clearSign2');
+
+                $("#form").submit(function(event){
+
+                    var spinner = $('#loader'); //loader
+                        spinner.show(); //loader
+
+                    if (!signaturePad.isEmpty()) {
+                        dataURL = signaturePad.toDataURL('image/png');
+                        document.getElementById("sign").value = dataURL;
+                    }
+                    if (!signaturePad2.isEmpty()) {
+                        dataURL2 = signaturePad2.toDataURL('image/png');
+                        document.getElementById("sign_2").value = dataURL2;
+                    }
+                });
+
+            cancelButton.addEventListener('click', function (event) {
+                signaturePad.clear();
+                document.getElementById("sign").value = "";
+            });
+            cancelButton2.addEventListener('click', function (event) {
+                signaturePad2.clear();
+                document.getElementById("sign_2").value = "";
+            });
+
+
+
+            //new
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
+        });
+    </script>
+
+
+
+
+
+</body></html>

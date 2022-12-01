@@ -32,7 +32,7 @@ const Address = () => {
       try {
         setValidationsErrors({});
         await axios.post(`address`, { ...values, id });
-        navigate("work/" + id);
+        navigate("/work/" + id);
       } catch (error) {
         if (error?.response?.data?.errors) {
           setValidationsErrors(error.response.data.errors);
@@ -98,7 +98,7 @@ const Address = () => {
                     value={formik.values.street}
                     className={`form-control`}
                     placeholder="اسم الشارع"
-                    name="text"
+                    name="street"
                     id="street"
                   />
                   <span className="errors_steps" id="mobile_error"></span>
@@ -115,7 +115,7 @@ const Address = () => {
                     value={formik.values.landmark}
                     className={`form-control`}
                     placeholder="أقرب معلم"
-                    name="text"
+                    name="landmark"
                     id="landmark"
                   />
                 </div>

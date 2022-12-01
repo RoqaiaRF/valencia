@@ -51,7 +51,7 @@ function KafeelAddress({ values, handleChange }) {
               value={values.street_kafeel}
               className="form-control"
               placeholder="اسم الشارع"
-              name="text"
+              name="street_kafeel"
               id="street_kafeel"
             />
             <span className="errors_steps" id="mobile_error"></span>
@@ -68,7 +68,7 @@ function KafeelAddress({ values, handleChange }) {
               value={values.landmark_kafeel}
               className="form-control"
               placeholder="أقرب معلم"
-              name="text"
+              name="landmark_kafeel"
               id="landmark_kafeel"
             />
           </div>

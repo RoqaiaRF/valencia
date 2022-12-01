@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import { Spin } from "antd";
 import axios from "../lib/axios";
-const Address = () => {
+import KafeelWork from "../components/kafeelWork";
+import { useParams, useNavigate } from "react-router-dom";
+const Work = () => {
   const [validationsErrors, setValidationsErrors] = useState({});
   const [validationsGeneral, setValidationsGeneral] = useState({});
+  const id = useParams().id;
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       first_name: "",
@@ -15,32 +19,26 @@ const Address = () => {
       third_name_kafeel: "",
       last_name: "",
       last_name_kafeel: "",
-
     },
     isInitialValid: true,
     enableReinitialize: true,
     onSubmit: async (values) => {
       try {
         setValidationsErrors({});
-        const res = await axios.post(`info`, values);
-        // Authentication was successful.
-        if (res.status === 200) {
-          console.log("p");
-        }
+        await axios.post(`work`, { ...values, id });
+        navigate("vehicle/" + id);
       } catch (error) {
-        if (
-          error.response &&
-          error.response.data &&
-          error.response.data.errors
-        ) {
+        if (error?.response?.data?.errors) {
           setValidationsErrors(error.response.data.errors);
         }
-        if (error.response && error.response.data) {
+        if (error?.response?.data) {
           setValidationsGeneral(error.response.data);
         }
       }
     },
   });
+  const isKafeel = localStorage.getItem("kafeel");
+
   return (
     <>
       <div className="field-header">
@@ -50,55 +48,74 @@ const Address = () => {
         <form onSubmit={formik.handleSubmit}>
           <div className="form-group form-inline ">
             <div className="row">
-             
               <div className="col-md-3">
                 <div className="app-form">
                   <label className="control-label">
-                  المحافظة : <span className="star">*</span>
+                    نوع العمل: <span className="star">*</span>
                   </label>
                   <select
-                    id="gender"
-                    value={formik.values.gender}
+                    id="province_kafeel"
+                    value={formik.values.province_kafeel}
                     onChange={formik.handleChange}
                     className="form-control"
-                    name="gender"
+                    name="province_kafeel"
                     required=""
                   >
-                    <option selected="" disabled="" hidden="">
-                      اختر المحافظة
+                    <option value="" disabled="" hidden="">
+                      اختر نوع العمل
                     </option>
-                    <option value="Amman">عمان</option>
-                    <option value="Sanaa">الصنعاء</option>
+                    <option value="employee">موظف</option>
+                    <option value="work_owner">صاحب عمل </option>
+                    <option value="house_wife">ربة منزل </option>
+                    <option value="other">أخري</option>
                   </select>
                 </div>
               </div>
-              
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <div className="app-form">
-                  <label className="control-label">اسم المنطقة :</label>
+                  <label className="control-label">
+                    جهة العمل : <span className="star">*</span>
+                  </label>
                   <input
                     onChange={formik.handleChange}
-                    value={formik.values.number_doc}
+                    value={formik.values.region}
                     type="text"
-                    className="form-control"
-                    placeholder="اسم المنطقة"
-                    name="number_doc"
+                    className={`form-control`}
+                    placeholder="جهة العمل"
+                    name="region"
                   />
                 </div>
               </div>
-              <div className="col-md-5">
+
+              <div className="col-md-3">
                 <div className="app-form">
                   <label className="control-label">
-                  اسم الشارع: <span className="star">*</span>
+                    {" "}
+                    الوظيفة : <span className="star">*</span>
+                  </label>
+                  <input
+                    onChange={formik.handleChange}
+                    value={formik.values.region}
+                    type="text"
+                    className={`form-control`}
+                    placeholder="الوظيفة"
+                    name="region"
+                  />
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="app-form">
+                  <label className="control-label">
+                    هاتف العمل: <span className="star">*</span>
                   </label>
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.phone}
-                    className="form-control"
-                    placeholder="اسم الشارع"
+                    value={formik.values.street}
+                    className={`form-control`}
+                    placeholder="هاتف العمل"
                     name="text"
-                    id="mobile_number"
+                    id="street"
                   />
                   <span className="errors_steps" id="mobile_error"></span>
                 </div>
@@ -106,72 +123,80 @@ const Address = () => {
               <div className="col-md-3">
                 <div className="app-form">
                   <label className="control-label">
-                  أقرب معلم: <span className="star">*</span>
+                    معدل الدخل الشهري: <span className="star">*</span>
                   </label>
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.phone}
-                    className="form-control"
-                    placeholder="أقرب معلم"
+                    value={formik.values.landmark}
+                    className={`form-control`}
+                    placeholder="معدل الدخل الشهري"
                     name="text"
-                    id="mobile_number"
+                    id="landmark"
                   />
                 </div>
               </div>
               <div className="col-md-2">
                 <div className="app-form">
-                  <label className="control-label">
-                  رقم المنزل: <span className="star">*</span>
-                  </label>
+                  <label className="control-label">مصدر دخل آخر :</label>
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.phone}
-                    className="form-control"
-                    placeholder="رقم المنزل"
-                    name="number"
+                    value={formik.values.house_number}
+                    className={`form-control`}
+                    placeholder="مصدر دخل آخر "
+                    name="house_number"
+                  />
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="app-form">
+                  <label className="control-label">قيمة الدخل الآخر:</label>
+                  <input
+                    type="text"
+                    onChange={formik.handleChange}
+                    value={formik.values.store_name}
+                    className={`form-control`}
+                    placeholder="قيمة الدخل الآخر"
+                    name="store_name"
                   />
                 </div>
               </div>
               <div className="col-md-3">
                 <div className="app-form">
                   <label className="control-label">
-                   اسم المعرض: <span className="star">*</span>
+                    خاضع للضمان الاجتماعي : <span className="star">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
+                    id="province_kafeel"
+                    value={formik.values.province_kafeel}
                     onChange={formik.handleChange}
-                    value={formik.values.phone}
                     className="form-control"
-                    placeholder="اسم المعرض"
-                    name="text"
-                  />
-                </div>
-              </div>
-              <div className="col-md-4">
-                <div className="app-form">
-                  <label className="control-label">
-                   اسم الموظف الذي تواصل معك: <span className="star">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    onChange={formik.handleChange}
-                    value={formik.values.phone}
-                    className="form-control"
-                    placeholder="اسم الموظف الذي تواصل معك"
-                    name="text"
-                  />
+                    name="province_kafeel"
+                    required=""
+                  >
+                    <option value="" disabled="" hidden="">
+                      اختر الاجابة
+                    </option>
+                    <option value="yes">نعم</option>
+                    <option value="no">لا</option>
+                  </select>
                 </div>
               </div>
             </div>
           </div>
+          {isKafeel === "1" && (
+            <KafeelWork
+              values={formik.values}
+              handleChange={formik.handleChange}
+            />
+          )}
           <div className="col-md-12">
             <hr />
             <div className="py-2">
               <button
                 style={{ width: 100 }}
-                class="btn butt-primary nextBtn butt-lg pull-right step1_validation"
+                className="btn butt-primary nextBtn butt-lg pull-right step1_validation"
                 id="otp"
               >
                 التالي
@@ -184,4 +209,4 @@ const Address = () => {
   );
 };
 
-export default Address;
+export default Work;

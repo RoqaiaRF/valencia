@@ -4,7 +4,10 @@ import SignatureCanvas from "react-signature-canvas";
 import { FaTrash } from "react-icons/fa";
 import dataURItoBlob from "../functions/formData";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 function Terms() {
+  const id = useParams().id;
+
   const sign = useRef();
   const check = useRef();
   useEffect(() => {
@@ -103,6 +106,8 @@ function Terms() {
                   var blob = dataURItoBlob(sign.current.toDataURL());
                   var fd = new FormData(document.forms[0]);
                   fd.append("signature", blob, "sign.png");
+                  fd.append("id", id);
+
                   await axios.post("http://localhost:8080/signiture", fd, {
                     headers: { "Content-Type": "multipart/form-data" },
                   });

@@ -3,6 +3,7 @@ import axios from "../lib/axios";
 import { useState } from "react";
 import KafeelAttach from "../components/kafeelAttachment";
 import { useParams, useNavigate } from "react-router-dom";
+
 function Attachment() {
   const [images, setImages] = useState({
     front_id_image: "",

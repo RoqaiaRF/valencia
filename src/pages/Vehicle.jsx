@@ -20,7 +20,7 @@ const Vehicle = () => {
       try {
         setValidationsErrors({});
         await axios.post(`car`, { ...values, id });
-        navigate("/attachments/" + id);
+        navigate("/attachment/" + id);
       } catch (error) {
         if (error?.response?.data?.message) {
           setValidationsErrors(error.response.data.message);

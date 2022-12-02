@@ -32,12 +32,17 @@ body {
   margin-bottom: 12px;
   font-weight: 800;
 }
-.app-form input[type=text],
+.app-form input[type="text"],
 .app-form select,
 .app-form textarea {
   font-size: 13px;
   padding: 10px 19px;
   box-shadow: none;
+}
+.app-form.error input[type="text"],
+.app-form.error select,
+.app-form.error textarea {
+  border: 1px solid red;
 }
 
 .btn {
@@ -251,4 +256,8 @@ body {
 
 .ant-message.ant-message-top {
   transform: translateX(0%) !important;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
+.error_message {
+  color: red;
+  margin-top: 3px;
+}

@@ -10,22 +10,18 @@ const Vehicle = () => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      first_name: "",
-      first_name_kafeel: "",
-      second_name: "",
-      second_name_kafeel: "",
-      third_name: "",
-      third_name_kafeel: "",
-      last_name: "",
-      last_name_kafeel: "",
+      vehicle_type: "",
+      vehicle_situation: "",
+      first_payment: "",
+      installment_period: "",
     },
     isInitialValid: true,
     enableReinitialize: true,
     onSubmit: async (values) => {
       try {
         setValidationsErrors({});
-        await axios.post(`vehicle`, { ...values, id });
-        navigate("attachments/" + id);
+        await axios.post(`car`, { ...values, id });
+        navigate("/attachments/" + id);
       } catch (error) {
         if (error?.response?.data?.errors) {
           setValidationsErrors(error.response.data.errors);
@@ -53,11 +49,11 @@ const Vehicle = () => {
                   </label>
                   <input
                     onChange={formik.handleChange}
-                    value={formik.values.region}
+                    value={formik.values.vehicle_type}
                     type="text"
                     className={`form-control`}
                     placeholder="نوع المركبة"
-                    name="region"
+                    name="vehicle_type"
                   />
                 </div>
               </div>
@@ -67,11 +63,11 @@ const Vehicle = () => {
                     حالة المركبة : <span className="star">*</span>
                   </label>
                   <select
-                    id="province_kafeel"
-                    value={formik.values.province_kafeel}
+                    id="vehicle_situation"
+                    value={formik.values.vehicle_situation}
                     onChange={formik.handleChange}
                     className="form-control"
-                    name="province_kafeel"
+                    name="vehicle_situation"
                     required=""
                   >
                     <option value="" disabled="" hidden="">
@@ -90,10 +86,10 @@ const Vehicle = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.house_number}
+                    value={formik.values.first_payment}
                     className={`form-control`}
                     placeholder="الدفعة الاولى"
-                    name="house_number"
+                    name="first_payment"
                   />
                 </div>
               </div>
@@ -105,10 +101,10 @@ const Vehicle = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.store_name}
+                    value={formik.values.installment_period}
                     className={`form-control`}
                     placeholder="مدة التقسيط"
-                    name="store_name"
+                    name="installment_period"
                   />
                 </div>
               </div>

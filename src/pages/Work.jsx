@@ -11,22 +11,30 @@ const Work = () => {
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
-      first_name: "",
-      first_name_kafeel: "",
-      second_name: "",
-      second_name_kafeel: "",
-      third_name: "",
-      third_name_kafeel: "",
-      last_name: "",
-      last_name_kafeel: "",
+      type_of_employment: "",
+      employer: "",
+      jop: "",
+      phone_work: "",
+      monthly_income_rate: "",
+      other_source_of_income: "",
+      other_income_value: "",
+      is_daman: false,
+      type_of_employment_kafeel: "",
+      employer_kafeel: "",
+      jop_kafeel: "",
+      phone_work_kafeel: "",
+      monthly_income_rate_kafeel: "",
+      other_source_of_income_kafeel: "",
+      other_income_value_kafeel: "",
+      is_daman_kafeel: false,
     },
-    isInitialValid: true,
+    initialErrors: true,
     enableReinitialize: true,
     onSubmit: async (values) => {
       try {
         setValidationsErrors({});
         await axios.post(`work`, { ...values, id });
-        navigate("vehicle/" + id);
+        navigate("/vehicle/" + id);
       } catch (error) {
         if (error?.response?.data?.errors) {
           setValidationsErrors(error.response.data.errors);
@@ -54,11 +62,11 @@ const Work = () => {
                     نوع العمل: <span className="star">*</span>
                   </label>
                   <select
-                    id="province_kafeel"
-                    value={formik.values.province_kafeel}
+                    id="type_of_employment"
+                    value={formik.values.type_of_employment}
                     onChange={formik.handleChange}
                     className="form-control"
-                    name="province_kafeel"
+                    name="type_of_employment"
                     required=""
                   >
                     <option value="" disabled="" hidden="">
@@ -78,11 +86,11 @@ const Work = () => {
                   </label>
                   <input
                     onChange={formik.handleChange}
-                    value={formik.values.region}
+                    value={formik.values.employer}
                     type="text"
                     className={`form-control`}
                     placeholder="جهة العمل"
-                    name="region"
+                    name="employer"
                   />
                 </div>
               </div>
@@ -95,11 +103,11 @@ const Work = () => {
                   </label>
                   <input
                     onChange={formik.handleChange}
-                    value={formik.values.region}
+                    value={formik.values.jop}
                     type="text"
                     className={`form-control`}
                     placeholder="الوظيفة"
-                    name="region"
+                    name="jop"
                   />
                 </div>
               </div>
@@ -111,11 +119,11 @@ const Work = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.street}
+                    value={formik.values.phone_work}
                     className={`form-control`}
                     placeholder="هاتف العمل"
-                    name="text"
-                    id="street"
+                    name="phone_work"
+                    id="phone_work"
                   />
                   <span className="errors_steps" id="mobile_error"></span>
                 </div>
@@ -128,11 +136,11 @@ const Work = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.landmark}
+                    value={formik.values.monthly_income_rate}
                     className={`form-control`}
                     placeholder="معدل الدخل الشهري"
-                    name="text"
-                    id="landmark"
+                    name="monthly_income_rate"
+                    id="monthly_income_rate"
                   />
                 </div>
               </div>
@@ -142,10 +150,10 @@ const Work = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.house_number}
+                    value={formik.values.other_source_of_income}
                     className={`form-control`}
                     placeholder="مصدر دخل آخر "
-                    name="house_number"
+                    name="other_source_of_income"
                   />
                 </div>
               </div>
@@ -155,10 +163,10 @@ const Work = () => {
                   <input
                     type="text"
                     onChange={formik.handleChange}
-                    value={formik.values.store_name}
+                    value={formik.values.other_income_value}
                     className={`form-control`}
                     placeholder="قيمة الدخل الآخر"
-                    name="store_name"
+                    name="other_income_value"
                   />
                 </div>
               </div>
@@ -168,18 +176,18 @@ const Work = () => {
                     خاضع للضمان الاجتماعي : <span className="star">*</span>
                   </label>
                   <select
-                    id="province_kafeel"
-                    value={formik.values.province_kafeel}
+                    id="is_daman"
+                    value={formik.values.is_daman}
                     onChange={formik.handleChange}
                     className="form-control"
-                    name="province_kafeel"
+                    name="is_daman"
                     required=""
                   >
                     <option value="" disabled="" hidden="">
                       اختر الاجابة
                     </option>
-                    <option value="yes">نعم</option>
-                    <option value="no">لا</option>
+                    <option value="true">نعم</option>
+                    <option value="false">لا</option>
                   </select>
                 </div>
               </div>

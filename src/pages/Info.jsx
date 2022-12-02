@@ -12,6 +12,7 @@ const Info = () => {
   const [validationsErrors, setValidationsErrors] = useState({});
   const [validationsGeneral, setValidationsGeneral] = useState({});
   const [isPhone, setIsPhone] = useState(false);
+  const [phoneDone, setPhoneDone] = useState(false);
   const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
@@ -76,19 +77,19 @@ const Info = () => {
       .catch((error) => {});
   };
   const onDone = async () => {
+    setPhoneDone(true);
     try {
       setValidationsErrors({});
       const res = await axios.post(`info`, {
         ...formik.values,
         is_kafeel: formik.values.is_kafeel === "1" ? true : false,
       });
+
       navigate("/address/" + res.data.message);
     } catch (error) {
-      if (error?.response?.data?.errors) {
-        setValidationsErrors(error.response.data.errors);
-      }
-      if (error.response.data) {
-        setValidationsGeneral(error?.response?.data);
+      setIsPhone(false);
+      if (error?.response?.data?.message) {
+        setValidationsErrors(error.response.data.message);
       }
     }
   };
@@ -109,7 +110,11 @@ const Info = () => {
           <div className="form-group form-inline ">
             <div className="row">
               <div className="col-xl-3 col-md-6">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.first_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم الاول : <span className="star">*</span>
                   </label>
@@ -123,10 +128,20 @@ const Info = () => {
                     id="name1"
                     required=""
                   />
+                  {validationsErrors?.first_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.first_name}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-xl-3 col-md-6">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.second_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم الاب : <span className="star">*</span>
                   </label>
@@ -139,10 +154,20 @@ const Info = () => {
                     id="name2"
                     value={formik.values.second_name}
                   />
+                  {validationsErrors?.second_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.second_name}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-xl-3 col-md-6">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.third_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم الجد : <span className="star">*</span>
                   </label>
@@ -156,10 +181,20 @@ const Info = () => {
                     id="name3"
                     required=""
                   />
+                  {validationsErrors?.third_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.third_name}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-xl-3 col-md-6">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.last_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم العائلة : <span className="star">*</span>
                   </label>
@@ -173,10 +208,20 @@ const Info = () => {
                     id="last_name"
                     required=""
                   />
+                  {validationsErrors?.last_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.last_name}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.nationality && "error"
+                  }`}
+                >
                   <label className="control-label">
                     الجنسية : <span className="star">*</span>
                   </label>
@@ -194,10 +239,18 @@ const Info = () => {
                     <option value="jordanian">أردنية</option>
                     <option value="not_jordanian">غير أردنية</option>
                   </select>
+                  {validationsErrors?.nationality && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.nationality}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${validationsErrors.gender && "error"}`}
+                >
                   <label className="control-label">
                     الجنس : <span className="star">*</span>
                   </label>
@@ -215,10 +268,20 @@ const Info = () => {
                     <option value="male">ذكر</option>
                     <option value="female">أنثى</option>
                   </select>
+                  {validationsErrors?.gender && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.gender}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.national_id && "error"
+                  }`}
+                >
                   <label className="control-label">
                     الرقم الوطني : <span className="star">*</span>
                   </label>
@@ -231,14 +294,20 @@ const Info = () => {
                     name="national_id"
                     id="national_id"
                   />
-                  <span
-                    className="errors_steps"
-                    id="national_number_error"
-                  ></span>
+                  {validationsErrors?.national_id && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.national_id}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.type_doc && "error"
+                  }`}
+                >
                   <label className="control-label">نوع الوثيقة :</label>
                   <select
                     name="type_doc"
@@ -253,10 +322,20 @@ const Info = () => {
                     <option value="passport">جواز سفر</option>
                     <option value="national_id">هوية احوال مدنية</option>
                   </select>
+                  {validationsErrors?.type_doc && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.type_doc}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.number_doc && "error"
+                  }`}
+                >
                   <label className="control-label">رقم الوثيقة :</label>
                   <input
                     onChange={formik.handleChange}
@@ -266,10 +345,18 @@ const Info = () => {
                     placeholder="رقم الوثيقة"
                     name="number_doc"
                   />
+                  {validationsErrors?.number_doc && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.number_doc}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${validationsErrors.phone && "error"}`}
+                >
                   <label className="control-label">
                     رقم الهاتف الخلوي : <span className="star">*</span>
                   </label>
@@ -282,11 +369,20 @@ const Info = () => {
                     name="phone"
                     id="mobile_number"
                   />
-                  <span className="errors_steps" id="mobile_error"></span>
+                  {validationsErrors?.phone && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.phone}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.is_kafeel && "error"
+                  }`}
+                >
                   <label className="control-label">
                     هل يوجد كفلاء : <span className="star">*</span>
                   </label>
@@ -321,6 +417,7 @@ const Info = () => {
                 <Kafeel
                   handleChange={formik.handleChange}
                   values={formik.values}
+                  validationsErrors={validationsErrors}
                 />
               )}
             </div>
@@ -331,8 +428,14 @@ const Info = () => {
           <div className="py-2">
             <button
               onClick={(e) => {
-                console.log(formik.values);
-                if (!formik.values.phone) return;
+                if (!formik.values.phone) {
+                  setValidationsErrors({ phone: "رقم الهاتف مطلوب" });
+                  return;
+                }
+                if (phoneDone) {
+                  onDone();
+                  return;
+                }
                 setIsPhone(true);
                 onSignInSubmit(e);
               }}

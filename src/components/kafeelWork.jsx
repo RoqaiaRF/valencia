@@ -11,11 +11,11 @@ function KafeelWork({ values, handleChange }) {
               نوع العمل: <span className="star">*</span>
             </label>
             <select
-              id="province_kafeel"
-              value={values.province_kafeel}
+              id="type_of_employment_kafeel"
+              value={values.type_of_employment_kafeel}
               onChange={handleChange}
               className="form-control"
-              name="province_kafeel"
+              name="type_of_employment_kafeel"
               required=""
             >
               <option value="" disabled="" hidden="">
@@ -35,11 +35,11 @@ function KafeelWork({ values, handleChange }) {
             </label>
             <input
               onChange={handleChange}
-              value={values.region}
+              value={values.employer_kafeel}
               type="text"
               className={`form-control`}
               placeholder="جهة العمل"
-              name="region"
+              name="employer_kafeel"
             />
           </div>
         </div>
@@ -52,11 +52,11 @@ function KafeelWork({ values, handleChange }) {
             </label>
             <input
               onChange={handleChange}
-              value={values.region}
+              value={values.jop_kafeel}
               type="text"
               className={`form-control`}
               placeholder="الوظيفة"
-              name="region"
+              name="jop_kafeel"
             />
           </div>
         </div>
@@ -68,11 +68,11 @@ function KafeelWork({ values, handleChange }) {
             <input
               type="text"
               onChange={handleChange}
-              value={values.street}
+              value={values.phone_work_kafeel}
               className={`form-control`}
               placeholder="هاتف العمل"
-              name="text"
-              id="street"
+              name="phone_work_kafeel"
+              id="phone_work_kafeel"
             />
             <span className="errors_steps" id="mobile_error"></span>
           </div>
@@ -85,11 +85,11 @@ function KafeelWork({ values, handleChange }) {
             <input
               type="text"
               onChange={handleChange}
-              value={values.landmark}
+              value={values.monthly_income_rate_kafeel}
               className={`form-control`}
               placeholder="معدل الدخل الشهري"
-              name="text"
-              id="landmark"
+              name="monthly_income_rate_kafeel"
+              id="monthly_income_rate_kafeel"
             />
           </div>
         </div>
@@ -99,10 +99,10 @@ function KafeelWork({ values, handleChange }) {
             <input
               type="text"
               onChange={handleChange}
-              value={values.house_number}
+              value={values.other_source_of_income_kafeel}
               className={`form-control`}
               placeholder="مصدر دخل آخر "
-              name="house_number"
+              name="other_source_of_income_kafeel"
             />
           </div>
         </div>
@@ -112,10 +112,10 @@ function KafeelWork({ values, handleChange }) {
             <input
               type="text"
               onChange={handleChange}
-              value={values.store_name}
+              value={values.other_income_value_kafeel}
               className={`form-control`}
               placeholder="قيمة الدخل الآخر"
-              name="store_name"
+              name="other_income_value_kafeel"
             />
           </div>
         </div>
@@ -125,18 +125,18 @@ function KafeelWork({ values, handleChange }) {
               خاضع للضمان الاجتماعي : <span className="star">*</span>
             </label>
             <select
-              id="province_kafeel"
-              value={values.province_kafeel}
+              id="is_daman_kafeel"
+              value={values.is_daman_kafeel}
               onChange={handleChange}
               className="form-control"
-              name="province_kafeel"
+              name="is_daman_kafeel"
               required=""
             >
               <option value="" disabled="" hidden="">
                 اختر الاجابة
               </option>
-              <option value="yes">نعم</option>
-              <option value="no">لا</option>
+              <option value="true">نعم</option>
+              <option value="false">لا</option>
             </select>
           </div>
         </div>

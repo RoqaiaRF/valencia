@@ -41,6 +41,13 @@ body {
     padding: 10px 19px;
     box-shadow: none;
   }
+  &.error {
+    input[type="text"],
+    select,
+    textarea {
+      border: 1px solid red;
+    }
+  }
 }
 // Buttons Style
 .btn {

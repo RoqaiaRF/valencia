@@ -1,4 +1,4 @@
-const Kafeel = ({ values, handleChange }) => {
+const Kafeel = ({ values, handleChange, validationsErrors }) => {
   return (
     <div className="col-md-12 p-0">
       <div className="field-header">
@@ -6,7 +6,11 @@ const Kafeel = ({ values, handleChange }) => {
       </div>
       <div className="row">
         <div className="col-xl-3 col-md-6">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.first_name_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               الاسم الاول الكفيل (حسب الهوية) : <span className="star">*</span>
             </label>
@@ -20,10 +24,18 @@ const Kafeel = ({ values, handleChange }) => {
               id="name1"
               required=""
             />
+            {validationsErrors?.first_name_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.first_name_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.second_name && "error"}`}
+          >
             <label className="control-label">
               اسم الأب للكفيل : <span className="star">*</span>
             </label>
@@ -36,10 +48,20 @@ const Kafeel = ({ values, handleChange }) => {
               id="name2"
               value={values.second_name_kafeel}
             />
+            {validationsErrors?.second_name_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.second_name_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.third_name_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               اسم الجد للكفيل : <span className="star">*</span>
             </label>
@@ -53,10 +75,20 @@ const Kafeel = ({ values, handleChange }) => {
               id="name3"
               required=""
             />
+            {validationsErrors?.third_name_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.third_name_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-xl-3 col-md-6">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.last_name_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               اسم العائلة للكفيل : <span className="star">*</span>
             </label>
@@ -70,10 +102,20 @@ const Kafeel = ({ values, handleChange }) => {
               id="last_name_kafeel"
               required=""
             />
+            {validationsErrors?.last_name_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.last_name_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.nationality_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               جنسية للكفيل : <span className="star">*</span>
             </label>
@@ -91,10 +133,18 @@ const Kafeel = ({ values, handleChange }) => {
               <option value="jordanian">أردنية</option>
               <option value="not_jordanian">غير أردنية</option>
             </select>
+            {validationsErrors?.nationality_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.nationality_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.gender_kafeel && "error"}`}
+          >
             <label className="control-label">
               الجنس : <span className="star">*</span>
             </label>
@@ -112,10 +162,20 @@ const Kafeel = ({ values, handleChange }) => {
               <option value="male">ذكر</option>
               <option value="female">أنثى</option>
             </select>
+            {validationsErrors?.gender_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.gender_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.national_id_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               الرقم الوطني للكفيل: <span className="star">*</span>
             </label>
@@ -130,11 +190,21 @@ const Kafeel = ({ values, handleChange }) => {
               name="national_id_kafeel"
               id="national_id"
             />
+            {validationsErrors?.national_id_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.national_id_kafeel}
+              </span>
+            )}
             <span className="errors_steps" id="national_number_error"></span>
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.type_doc_kafeel && "error"
+            }`}
+          >
             <label className="control-label">نوع الوثيقة :</label>
             <select
               name="type_doc_kafeel"
@@ -149,10 +219,20 @@ const Kafeel = ({ values, handleChange }) => {
               <option value="passport">جواز سفر</option>
               <option value="national_id">هوية احوال مدنية</option>
             </select>
+            {validationsErrors?.type_doc_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.type_doc_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.number_doc_kafeel && "error"
+            }`}
+          >
             <label className="control-label">رقم الوثيقة :</label>
             <input
               onChange={handleChange}
@@ -162,10 +242,18 @@ const Kafeel = ({ values, handleChange }) => {
               placeholder="رقم الوثيقة"
               name="number_doc_kafeel"
             />
+            {validationsErrors?.number_doc_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.number_doc_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.phone_kafeel && "error"}`}
+          >
             <label className="control-label">
               رقم الهاتف الخلوي للكفيل: <span className="star">*</span>
             </label>
@@ -181,7 +269,13 @@ const Kafeel = ({ values, handleChange }) => {
               id="mobile_number"
               // pattern="(07|\u0660\u0667)[7-9\u0667-\u0669][0-9\u0660-\u0669]{7}"
             />
-            <span className="errors_steps" id="mobile_error"></span>
+
+            {validationsErrors?.phone_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.phone_kafeel}
+              </span>
+            )}
           </div>
         </div>
       </div>

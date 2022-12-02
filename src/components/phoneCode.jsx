@@ -1,6 +1,6 @@
 import { Modal } from "antd";
 
-import { Form, Input,message } from "antd";
+import { Form, Input, message } from "antd";
 
 import { FaLock } from "react-icons/fa";
 import { useState } from "react";
@@ -16,7 +16,7 @@ function Phone({ visible, onClose, onDone }) {
         // ...
       })
       .catch((error) => {
-        message.error('رمز هاتف خاطئ')
+        message.error("رمز هاتف خاطئ");
         // User couldn't sign in (bad verification code?)
         // ...
       });
@@ -24,7 +24,7 @@ function Phone({ visible, onClose, onDone }) {
   return (
     <Modal
       onCancel={onClose}
-      visible={visible}
+      open={visible}
       okText="تأكيد"
       cancelText="الغاء"
       title="ادخل الكود المرسل"

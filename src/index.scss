@@ -261,3 +261,14 @@ body {
 .ant-message.ant-message-top {
   transform: translateX(0%) !important;
 }
+.error {
+  .ant-upload {
+    .ant-btn {
+      border-color: red;
+    }
+  }
+}
+.error_message {
+  color: red;
+  font-size: 13px;
+}

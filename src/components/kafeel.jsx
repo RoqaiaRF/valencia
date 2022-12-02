@@ -34,7 +34,9 @@ const Kafeel = ({ values, handleChange, validationsErrors }) => {
         </div>
         <div className="col-xl-3 col-md-6">
           <div
-            className={`app-form ${validationsErrors.second_name && "error"}`}
+            className={`app-form ${
+              validationsErrors.second_name_kafeel && "error"
+            }`}
           >
             <label className="control-label">
               اسم الأب للكفيل : <span className="star">*</span>

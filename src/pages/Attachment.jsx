@@ -20,6 +20,7 @@ function Attachment() {
     daman_image_kafeel: "",
     another_attachments_kafeel: "",
   });
+  const [validationsErrors, setValidationErrors] = useState({});
   const navigate = useNavigate();
   const id = useParams().id;
   const isKafeel = localStorage.getItem("kafeel");
@@ -31,13 +32,17 @@ function Attachment() {
       </div>
       <div className="row">
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.front_id_image && "error"
+            }`}
+          >
             <label className="control-label">
               صورة الهوية من الامام : <span className="star">*</span>
             </label>
             <Upload
               maxCount={1}
-              style={{ width: "100%" }}
+              style={{ width: "100" }}
               accept="image/*,.pdf"
               onRemove={() =>
                 setImages((images) => {
@@ -59,10 +64,18 @@ function Attachment() {
             >
               <Button style={{ width: "100%" }}>صورة الهوية من الامام</Button>
             </Upload>
+            {validationsErrors?.front_id_image && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.front_id_image}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.back_id_image && "error"}`}
+          >
             <label className="control-label">
               صورة الهوية من الخلف : <span className="star">*</span>
             </label>
@@ -90,10 +103,20 @@ function Attachment() {
             >
               <Button style={{ width: "100%" }}>صورة الهوية من الخلف</Button>
             </Upload>
+            {validationsErrors?.back_id_image && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.back_id_image}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.family_book_image && "error"
+            }`}
+          >
             <label className="control-label">
               صورة دفتر العائلة : <span className="star">*</span>
             </label>
@@ -121,10 +144,20 @@ function Attachment() {
             >
               <Button style={{ width: "100%" }}>صورة دفتر العائلة</Button>
             </Upload>
+            {validationsErrors?.family_book_image && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.family_book_image}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.income_certificate && "error"
+            }`}
+          >
             <label className="control-label">شهادة راتب :</label>
             <Upload
               maxCount={1}
@@ -150,10 +183,18 @@ function Attachment() {
             >
               <Button style={{ width: "100%" }}>شهادة راتب </Button>
             </Upload>
+            {validationsErrors?.income_certificate && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.income_certificate}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-6">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.daman_image && "error"}`}
+          >
             <label className="control-label">صورة عن الضمان الاجتماعي :</label>
             <Upload
               maxCount={1}
@@ -181,10 +222,20 @@ function Attachment() {
                 صورة عن الضمان الاجتماعي{" "}
               </Button>
             </Upload>
+            {validationsErrors?.daman_image && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.daman_image}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.another_attachments && "error"
+            }`}
+          >
             <label className="control-label">مرفقات أخرى :</label>
             <Upload
               maxCount={1}
@@ -210,32 +261,55 @@ function Attachment() {
             >
               <Button style={{ width: "100%" }}>مرفقات أخرى </Button>
             </Upload>
+            {validationsErrors?.another_attachments && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.another_attachments}
+              </span>
+            )}
           </div>
         </div>
-        {isKafeel === "1" && <KafeelAttach setKafeelImages={setKafeelImages} />}
+        {isKafeel === "1" && (
+          <KafeelAttach
+            setKafeelImages={setKafeelImages}
+            validationsErrors={validationsErrors}
+          />
+        )}
         <div className="col-md-12">
           <hr />
           <div className="py-2">
             <button
               onClick={async () => {
                 try {
-                  const files = new FormData();
-                  Object.keys(images).forEach((key) => {
-                    files.append(key, images[key]);
-                  });
-                  files.append("id", id);
-                  await axios.post("madeenfiles", files);
-
                   if (isKafeel === "1") {
+                    const files = new FormData();
                     const filesKafeel = new FormData();
+                    Object.keys(images).forEach((key) => {
+                      files.append(key, images[key]);
+                    });
                     Object.keys(kafeelImages).forEach((key) => {
                       filesKafeel.append(key, kafeelImages[key]);
                     });
+                    files.append("id", id);
                     filesKafeel.append("id", id);
-                    await axios.post("kafeelfiles", filesKafeel);
+                    await Promise.all([
+                      axios.post("madeenfiles", files),
+                      axios.post("kafeelfiles", filesKafeel),
+                    ]);
+                    navigate("/terms/" + id);
+                  } else {
+                    const files = new FormData();
+                    Object.keys(images).forEach((key) => {
+                      files.append(key, images[key]);
+                    });
+                    files.append("id", id);
+                    await axios.post("madeenfiles", files);
+                    navigate("/terms/" + id);
                   }
-                  navigate("/terms/" + id);
-                } catch (error) {}
+                } catch (error) {
+                  if (error?.response?.data)
+                    setValidationErrors(error.response.data);
+                }
               }}
               style={{ width: 100 }}
               className="btn butt-primary nextBtn butt-lg pull-right step1_validation"

@@ -68,8 +68,20 @@ const Address = () => {
                     <option value="" disabled="" hidden="">
                       اختر المحافظة
                     </option>
-                    <option value="Amman">عمان</option>
-                    <option value="Sanaa">الصنعاء</option>
+                    <option value="عمان">عمان</option>
+                    <option value="اربد">اربد</option>
+                    <option value="الطفيلة">الطفيلة</option>
+                    <option value="الزرقاء">الزرقاء</option>
+                     <option value="العقبة">العقبة</option>
+                    <option value="السلط">السلط</option>
+                     <option value="مادبا">مادبا</option>
+                    <option value="الكرك">الكرك</option>
+                     <option value="عجلون">عجلون</option>
+                    <option value="جرش">جرش</option>
+                     <option value="معان">معان</option>
+                    <option value="المفرق">المفرق</option>
+                     <option value="عمان">عمان</option>
+                    
                   </select>
                 </div>
               </div>

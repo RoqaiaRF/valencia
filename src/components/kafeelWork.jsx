@@ -21,10 +21,10 @@ function KafeelWork({ values, handleChange }) {
               <option value="" disabled="" hidden="">
                 اختر نوع العمل
               </option>
-              <option value="employee">موظف</option>
-              <option value="work_owner">صاحب عمل </option>
-              <option value="house_wife">ربة منزل </option>
-              <option value="other">أخري</option>
+              <option value="موظف">موظف</option>
+              <option value="صاحب عمل ">صاحب عمل </option>
+              <option value="ربة منزل ">ربة منزل </option>
+              <option value="أخري">أخري</option>
             </select>
           </div>
         </div>
@@ -135,8 +135,8 @@ function KafeelWork({ values, handleChange }) {
               <option value="" disabled="" hidden="">
                 اختر الاجابة
               </option>
-              <option value="true">نعم</option>
-              <option value="false">لا</option>
+              <option value="1">نعم</option>
+              <option value="0">لا</option>
             </select>
           </div>
         </div>

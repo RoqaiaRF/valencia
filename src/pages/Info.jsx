@@ -79,12 +79,26 @@ const Info = () => {
   const onDone = async () => {
     setPhoneDone(true);
     try {
+      const values = formik.values;
       setValidationsErrors({});
-      const res = await axios.post(`info`, {
-        ...formik.values,
-        is_kafeel: formik.values.is_kafeel === "1" ? true : false,
-      });
-
+      const {
+        first_name_kafeel,
+        second_name_kafeel,
+        third_name_kafeel,
+        last_name_kafeel,
+        national_id_kafeel,
+        type_doc_kafeel,
+        nationality_kafeel,
+        number_doc_kafeel,
+        gender_kafeel,
+        house_number_kafeel,
+        phone_kafeel,
+        ...user
+      } = values;
+      const res = await axios.post(
+        `info`,
+        values.is_kafeel === "1" ? values : user
+      );
       navigate("/address/" + res.data.message);
     } catch (error) {
       setIsPhone(false);
@@ -236,8 +250,8 @@ const Info = () => {
                     <option disabled="" hidden="">
                       اختر الجنسية
                     </option>
-                    <option value="jordanian">أردنية</option>
-                    <option value="not_jordanian">غير أردنية</option>
+                    <option value="اردني">أردنية</option>
+                    <option value="غير اردني">غير أردنية</option>
                   </select>
                   {validationsErrors?.nationality && (
                     <span className="error_message">
@@ -265,8 +279,8 @@ const Info = () => {
                     <option disabled="" hidden="">
                       اختر الجنس
                     </option>
-                    <option value="male">ذكر</option>
-                    <option value="female">أنثى</option>
+                    <option value="ذكر">ذكر</option>
+                    <option value="انثي">أنثى</option>
                   </select>
                   {validationsErrors?.gender && (
                     <span className="error_message">
@@ -319,8 +333,8 @@ const Info = () => {
                     <option disabled="" hidden="">
                       اختر نوع الوثيقة{" "}
                     </option>
-                    <option value="passport">جواز سفر</option>
-                    <option value="national_id">هوية احوال مدنية</option>
+                    <option value="جواز سفر">جواز سفر</option>
+                    <option value="احوال مدنية">هوية احوال مدنية</option>
                   </select>
                   {validationsErrors?.type_doc && (
                     <span className="error_message">
@@ -428,16 +442,16 @@ const Info = () => {
           <div className="py-2">
             <button
               onClick={(e) => {
-                if (!formik.values.phone) {
-                  setValidationsErrors({ phone: "رقم الهاتف مطلوب" });
-                  return;
-                }
-                if (phoneDone) {
-                  onDone();
-                  return;
-                }
-                setIsPhone(true);
-                onSignInSubmit(e);
+                // if (!formik.values.phone) {
+                //   setValidationsErrors({ phone: "رقم الهاتف مطلوب" });
+                //   return;
+                // }
+                // if (phoneDone) {
+                onDone();
+                //   return;
+                // }
+                // setIsPhone(true);
+                // onSignInSubmit(e);
               }}
               style={{ width: 100 }}
               className="btn butt-primary nextBtn butt-lg pull-right step1_validation"

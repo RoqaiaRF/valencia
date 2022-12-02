@@ -73,8 +73,8 @@ const Vehicle = () => {
                     <option value="" disabled="" hidden="">
                       اختر حالة المركبة
                     </option>
-                    <option value="new">جديد </option>
-                    <option value="used">مستعمل </option>
+                    <option value="جديد">جديد </option>
+                    <option value="مستعمل">مستعمل </option>
                   </select>
                 </div>
               </div>

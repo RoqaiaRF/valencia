@@ -130,8 +130,8 @@ const Kafeel = ({ values, handleChange, validationsErrors }) => {
               <option disabled="" hidden="">
                 اختر الجنسية
               </option>
-              <option value="jordanian">أردنية</option>
-              <option value="not_jordanian">غير أردنية</option>
+              <option value="أردنية">أردنية</option>
+              <option value="غير أردنية">غير أردنية</option>
             </select>
             {validationsErrors?.nationality_kafeel && (
               <span className="error_message">
@@ -159,8 +159,8 @@ const Kafeel = ({ values, handleChange, validationsErrors }) => {
               <option disabled="" hidden="">
                 اختر الجنس
               </option>
-              <option value="male">ذكر</option>
-              <option value="female">أنثى</option>
+              <option value="ذكر">ذكر</option>
+              <option value="أنثى">أنثى</option>
             </select>
             {validationsErrors?.gender_kafeel && (
               <span className="error_message">
@@ -216,8 +216,8 @@ const Kafeel = ({ values, handleChange, validationsErrors }) => {
               <option disabled="" hidden="">
                 اختر نوع الوثيقة{" "}
               </option>
-              <option value="passport">جواز سفر</option>
-              <option value="national_id">هوية احوال مدنية</option>
+              <option value="جواز سفر">جواز سفر</option>
+              <option value="هوية احوال مدنية">هوية احوال مدنية</option>
             </select>
             {validationsErrors?.type_doc_kafeel && (
               <span className="error_message">

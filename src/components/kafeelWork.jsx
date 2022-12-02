@@ -66,7 +66,7 @@ function KafeelWork({ values, handleChange, validationsErrors }) {
 
         <div className="col-md-3">
           <div
-            className={`app-form ${validationsErrors.jop_kafeel && "error"}`}
+            className={`app-form ${validationsErrors.job_kafeel && "error"}`}
           >
             <label className="control-label">
               {" "}
@@ -74,16 +74,16 @@ function KafeelWork({ values, handleChange, validationsErrors }) {
             </label>
             <input
               onChange={handleChange}
-              value={values.jop_kafeel}
+              value={values.job_kafeel}
               type="text"
               className={`form-control`}
               placeholder="الوظيفة"
-              name="jop_kafeel"
+              name="job_kafeel"
             />
-            {validationsErrors?.jop_kafeel && (
+            {validationsErrors?.job_kafeel && (
               <span className="error_message">
                 {" "}
-                {validationsErrors?.jop_kafeel}
+                {validationsErrors?.job_kafeel}
               </span>
             )}
           </div>

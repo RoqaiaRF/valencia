@@ -13,7 +13,7 @@ const Work = () => {
     initialValues: {
       type_of_employment: "",
       employer: "",
-      jop: "",
+      job: "",
       phone_work: "",
       monthly_income_rate: "",
       other_source_of_income: "",
@@ -21,7 +21,7 @@ const Work = () => {
       is_daman: false,
       type_of_employment_kafeel: "",
       employer_kafeel: "",
-      jop_kafeel: "",
+      job_kafeel: "",
       phone_work_kafeel: "",
       monthly_income_rate_kafeel: "",
       other_source_of_income_kafeel: "",
@@ -36,7 +36,7 @@ const Work = () => {
         const {
           type_of_employment_kafeel,
           employer_kafeel,
-          jop_kafeel,
+          job_kafeel,
           phone_work_kafeel,
           monthly_income_rate_kafeel,
           other_source_of_income_kafeel,
@@ -126,23 +126,23 @@ const Work = () => {
               </div>
 
               <div className="col-md-3">
-                <div className={`app-form ${validationsErrors.jop && "error"}`}>
+                <div className={`app-form ${validationsErrors.job && "error"}`}>
                   <label className="control-label">
                     {" "}
                     الوظيفة : <span className="star">*</span>
                   </label>
                   <input
                     onChange={formik.handleChange}
-                    value={formik.values.jop}
+                    value={formik.values.job}
                     type="text"
                     className={`form-control`}
                     placeholder="الوظيفة"
-                    name="jop"
+                    name="job"
                   />
-                  {validationsErrors?.jop && (
+                  {validationsErrors?.job && (
                     <span className="error_message">
                       {" "}
-                      {validationsErrors?.jop}
+                      {validationsErrors?.job}
                     </span>
                   )}
                 </div>

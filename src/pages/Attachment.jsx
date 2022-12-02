@@ -220,19 +220,20 @@ function Attachment() {
               onClick={async () => {
                 try {
                   const files = new FormData();
-                  const filesKafeel = new FormData();
                   Object.keys(images).forEach((key) => {
                     files.append(key, images[key]);
                   });
-                  Object.keys(kafeelImages).forEach((key) => {
-                    filesKafeel.append(key, kafeelImages[key]);
-                  });
                   files.append("id", id);
-                  filesKafeel.append("id", id);
-                  const [filesRes, kafeelRes] = await Promise.all([
-                    axios.post("madeenfiles", files),
-                    axios.post("kafeelfiles", filesKafeel),
-                  ]);
+                  await axios.post("madeenfiles", files);
+
+                  if (isKafeel === "1") {
+                    const filesKafeel = new FormData();
+                    Object.keys(kafeelImages).forEach((key) => {
+                      filesKafeel.append(key, kafeelImages[key]);
+                    });
+                    filesKafeel.append("id", id);
+                    await axios.post("kafeelfiles", filesKafeel);
+                  }
                   navigate("/terms/" + id);
                 } catch (error) {}
               }}

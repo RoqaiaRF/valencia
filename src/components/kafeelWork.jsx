@@ -1,4 +1,4 @@
-function KafeelWork({ values, handleChange }) {
+function KafeelWork({ values, handleChange, validationsErrors }) {
   return (
     <div className="col-md-12 p-0">
       <div className="field-header">
@@ -6,7 +6,11 @@ function KafeelWork({ values, handleChange }) {
       </div>
       <div className="row">
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.type_of_employment_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               نوع العمل: <span className="star">*</span>
             </label>
@@ -26,10 +30,20 @@ function KafeelWork({ values, handleChange }) {
               <option value="ربة منزل ">ربة منزل </option>
               <option value="أخري">أخري</option>
             </select>
+            {validationsErrors?.type_of_employment_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.type_of_employment_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.employer_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               جهة العمل : <span className="star">*</span>
             </label>
@@ -41,11 +55,19 @@ function KafeelWork({ values, handleChange }) {
               placeholder="جهة العمل"
               name="employer_kafeel"
             />
+            {validationsErrors?.employer_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.employer_kafeel}
+              </span>
+            )}
           </div>
         </div>
 
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${validationsErrors.jop_kafeel && "error"}`}
+          >
             <label className="control-label">
               {" "}
               الوظيفة : <span className="star">*</span>
@@ -58,10 +80,20 @@ function KafeelWork({ values, handleChange }) {
               placeholder="الوظيفة"
               name="jop_kafeel"
             />
+            {validationsErrors?.jop_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.jop_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.phone_work_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               هاتف العمل: <span className="star">*</span>
             </label>
@@ -74,11 +106,21 @@ function KafeelWork({ values, handleChange }) {
               name="phone_work_kafeel"
               id="phone_work_kafeel"
             />
+            {validationsErrors?.phone_work_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.phone_work_kafeel}
+              </span>
+            )}
             <span className="errors_steps" id="mobile_error"></span>
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.monthly_income_rate_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               معدل الدخل الشهري: <span className="star">*</span>
             </label>
@@ -91,10 +133,20 @@ function KafeelWork({ values, handleChange }) {
               name="monthly_income_rate_kafeel"
               id="monthly_income_rate_kafeel"
             />
+            {validationsErrors?.monthly_income_rate_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.monthly_income_rate_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-2">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.other_source_of_income_kafeel && "error"
+            }`}
+          >
             <label className="control-label">مصدر دخل آخر :</label>
             <input
               type="text"
@@ -104,10 +156,20 @@ function KafeelWork({ values, handleChange }) {
               placeholder="مصدر دخل آخر "
               name="other_source_of_income_kafeel"
             />
+            {validationsErrors?.other_source_of_income_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.other_source_of_income_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-3">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.other_income_value_kafeel && "error"
+            }`}
+          >
             <label className="control-label">قيمة الدخل الآخر:</label>
             <input
               type="text"
@@ -117,10 +179,20 @@ function KafeelWork({ values, handleChange }) {
               placeholder="قيمة الدخل الآخر"
               name="other_income_value_kafeel"
             />
+            {validationsErrors?.other_income_value_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.other_income_value_kafeel}
+              </span>
+            )}
           </div>
         </div>
         <div className="col-md-4">
-          <div className="app-form">
+          <div
+            className={`app-form ${
+              validationsErrors.is_daman_kafeel && "error"
+            }`}
+          >
             <label className="control-label">
               خاضع للضمان الاجتماعي : <span className="star">*</span>
             </label>
@@ -138,6 +210,12 @@ function KafeelWork({ values, handleChange }) {
               <option value="1">نعم</option>
               <option value="0">لا</option>
             </select>
+            {validationsErrors?.is_daman_kafeel && (
+              <span className="error_message">
+                {" "}
+                {validationsErrors?.is_daman_kafeel}
+              </span>
+            )}
           </div>
         </div>
       </div>

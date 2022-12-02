@@ -5,7 +5,6 @@ import axios from "../lib/axios";
 import { useParams, useNavigate } from "react-router-dom";
 const Vehicle = () => {
   const [validationsErrors, setValidationsErrors] = useState({});
-  const [validationsGeneral, setValidationsGeneral] = useState({});
   const id = useParams().id;
   const navigate = useNavigate();
   const formik = useFormik({
@@ -23,11 +22,8 @@ const Vehicle = () => {
         await axios.post(`car`, { ...values, id });
         navigate("/attachments/" + id);
       } catch (error) {
-        if (error?.response?.data?.errors) {
-          setValidationsErrors(error.response.data.errors);
-        }
-        if (error?.response?.data) {
-          setValidationsGeneral(error.response.data);
+        if (error?.response?.data?.message) {
+          setValidationsErrors(error.response.data.message);
         }
       }
     },
@@ -43,7 +39,11 @@ const Vehicle = () => {
           <div className="form-group form-inline ">
             <div className="row">
               <div className="col-md-6">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.vehicle_type && "error"
+                  }`}
+                >
                   <label className="control-label">
                     نوع المركبة: <span className="star">*</span>
                   </label>
@@ -55,10 +55,20 @@ const Vehicle = () => {
                     placeholder="نوع المركبة"
                     name="vehicle_type"
                   />
+                  {validationsErrors?.vehicle_type && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.vehicle_type}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.vehicle_situation && "error"
+                  }`}
+                >
                   <label className="control-label">
                     حالة المركبة : <span className="star">*</span>
                   </label>
@@ -76,10 +86,20 @@ const Vehicle = () => {
                     <option value="جديد">جديد </option>
                     <option value="مستعمل">مستعمل </option>
                   </select>
+                  {validationsErrors?.vehicle_situation && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.vehicle_situation}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-5">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.first_payment && "error"
+                  }`}
+                >
                   <label className="control-label">
                     الدفعة الاولى : <span className="star">*</span>
                   </label>
@@ -91,10 +111,20 @@ const Vehicle = () => {
                     placeholder="الدفعة الاولى"
                     name="first_payment"
                   />
+                  {validationsErrors?.first_payment && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.first_payment}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-5">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.installment_period && "error"
+                  }`}
+                >
                   <label className="control-label">
                     مدة التقسيط : <span className="star">*</span>
                   </label>
@@ -106,6 +136,12 @@ const Vehicle = () => {
                     placeholder="مدة التقسيط"
                     name="installment_period"
                   />
+                  {validationsErrors?.installment_period && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.installment_period}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

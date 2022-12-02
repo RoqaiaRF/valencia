@@ -6,7 +6,7 @@ import KafeelWork from "../components/kafeelWork";
 import { useParams, useNavigate } from "react-router-dom";
 const Work = () => {
   const [validationsErrors, setValidationsErrors] = useState({});
-  const [validationsGeneral, setValidationsGeneral] = useState({});
+  const isKafeel = localStorage.getItem("kafeel");
   const id = useParams().id;
   const navigate = useNavigate();
   const formik = useFormik({
@@ -33,19 +33,29 @@ const Work = () => {
     onSubmit: async (values) => {
       try {
         setValidationsErrors({});
-        await axios.post(`work`, { ...values, id });
+        const {
+          type_of_employment_kafeel,
+          employer_kafeel,
+          jop_kafeel,
+          phone_work_kafeel,
+          monthly_income_rate_kafeel,
+          other_source_of_income_kafeel,
+          other_income_value_kafeel,
+          is_daman_kafeel,
+          ...user
+        } = values;
+        await axios.post(
+          `work`,
+          isKafeel === "1" ? { ...values, id } : { ...user, id }
+        );
         navigate("/vehicle/" + id);
       } catch (error) {
-        if (error?.response?.data?.errors) {
-          setValidationsErrors(error.response.data.errors);
-        }
-        if (error?.response?.data) {
-          setValidationsGeneral(error.response.data);
+        if (error?.response?.data?.message) {
+          setValidationsErrors(error.response.data.message);
         }
       }
     },
   });
-  const isKafeel = localStorage.getItem("kafeel");
 
   return (
     <>
@@ -57,7 +67,11 @@ const Work = () => {
           <div className="form-group form-inline ">
             <div className="row">
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.type_of_employment && "error"
+                  }`}
+                >
                   <label className="control-label">
                     نوع العمل: <span className="star">*</span>
                   </label>
@@ -77,10 +91,20 @@ const Work = () => {
                     <option value="ربة منزل ">ربة منزل </option>
                     <option value="أخري">أخري</option>
                   </select>
+                  {validationsErrors?.type_of_employment && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.type_of_employment}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.employer && "error"
+                  }`}
+                >
                   <label className="control-label">
                     جهة العمل : <span className="star">*</span>
                   </label>
@@ -92,11 +116,17 @@ const Work = () => {
                     placeholder="جهة العمل"
                     name="employer"
                   />
+                  {validationsErrors?.employer && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.employer}
+                    </span>
+                  )}
                 </div>
               </div>
 
               <div className="col-md-3">
-                <div className="app-form">
+                <div className={`app-form ${validationsErrors.jop && "error"}`}>
                   <label className="control-label">
                     {" "}
                     الوظيفة : <span className="star">*</span>
@@ -109,10 +139,20 @@ const Work = () => {
                     placeholder="الوظيفة"
                     name="jop"
                   />
+                  {validationsErrors?.jop && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.jop}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.phone_work && "error"
+                  }`}
+                >
                   <label className="control-label">
                     هاتف العمل: <span className="star">*</span>
                   </label>
@@ -125,11 +165,20 @@ const Work = () => {
                     name="phone_work"
                     id="phone_work"
                   />
-                  <span className="errors_steps" id="mobile_error"></span>
+                  {validationsErrors?.phone_work && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.phone_work}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.monthly_income_rate && "error"
+                  }`}
+                >
                   <label className="control-label">
                     معدل الدخل الشهري: <span className="star">*</span>
                   </label>
@@ -142,10 +191,20 @@ const Work = () => {
                     name="monthly_income_rate"
                     id="monthly_income_rate"
                   />
+                  {validationsErrors?.monthly_income_rate && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.monthly_income_rate}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-2">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.other_source_of_income && "error"
+                  }`}
+                >
                   <label className="control-label">مصدر دخل آخر :</label>
                   <input
                     type="text"
@@ -155,10 +214,20 @@ const Work = () => {
                     placeholder="مصدر دخل آخر "
                     name="other_source_of_income"
                   />
+                  {validationsErrors?.other_source_of_income && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.other_source_of_income}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.other_income_value && "error"
+                  }`}
+                >
                   <label className="control-label">قيمة الدخل الآخر:</label>
                   <input
                     type="text"
@@ -168,10 +237,20 @@ const Work = () => {
                     placeholder="قيمة الدخل الآخر"
                     name="other_income_value"
                   />
+                  {validationsErrors?.other_income_value && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.other_income_value}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.is_daman && "error"
+                  }`}
+                >
                   <label className="control-label">
                     خاضع للضمان الاجتماعي : <span className="star">*</span>
                   </label>
@@ -189,6 +268,12 @@ const Work = () => {
                     <option value="1">نعم</option>
                     <option value="0">لا</option>
                   </select>
+                  {validationsErrors?.is_daman && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.is_daman}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -197,6 +282,7 @@ const Work = () => {
             <KafeelWork
               values={formik.values}
               handleChange={formik.handleChange}
+              validationsErrors={validationsErrors}
             />
           )}
           <div className="col-md-12">

@@ -6,7 +6,6 @@ import KafeelAddress from "../components/kafeelAddress";
 import { useParams, useNavigate } from "react-router-dom";
 const Address = () => {
   const [validationsErrors, setValidationsErrors] = useState({});
-  const [validationsGeneral, setValidationsGeneral] = useState({});
   const id = useParams().id;
   const navigate = useNavigate();
 
@@ -31,14 +30,22 @@ const Address = () => {
     onSubmit: async (values) => {
       try {
         setValidationsErrors({});
-        await axios.post(`address`, { ...values, id });
+        const {
+          province_kafeel,
+          region_kafeel,
+          street_kafeel,
+          landmark_kafeel,
+          house_number_kafeel,
+          ...user
+        } = values;
+        await axios.post(
+          `address`,
+          isKafeel === "1" ? { ...values, id } : { ...user, id }
+        );
         navigate("/work/" + id);
       } catch (error) {
-        if (error?.response?.data?.errors) {
-          setValidationsErrors(error.response.data.errors);
-        }
-        if (error?.response?.data) {
-          setValidationsGeneral(error.response.data);
+        if (error?.response?.data?.message) {
+          setValidationsErrors(error.response.data.message);
         }
       }
     },
@@ -53,7 +60,11 @@ const Address = () => {
           <div className="form-group form-inline ">
             <div className="row">
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.province && "error"
+                  }`}
+                >
                   <label className="control-label">
                     المحافظة : <span className="star">*</span>
                   </label>
@@ -72,22 +83,29 @@ const Address = () => {
                     <option value="اربد">اربد</option>
                     <option value="الطفيلة">الطفيلة</option>
                     <option value="الزرقاء">الزرقاء</option>
-                     <option value="العقبة">العقبة</option>
+                    <option value="العقبة">العقبة</option>
                     <option value="السلط">السلط</option>
-                     <option value="مادبا">مادبا</option>
+                    <option value="مادبا">مادبا</option>
                     <option value="الكرك">الكرك</option>
-                     <option value="عجلون">عجلون</option>
+                    <option value="عجلون">عجلون</option>
                     <option value="جرش">جرش</option>
-                     <option value="معان">معان</option>
+                    <option value="معان">معان</option>
                     <option value="المفرق">المفرق</option>
-                     <option value="عمان">عمان</option>
-                    
+                    <option value="عمان">عمان</option>
                   </select>
+                  {validationsErrors?.province && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.province}
+                    </span>
+                  )}
                 </div>
               </div>
 
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${validationsErrors.region && "error"}`}
+                >
                   <label className="control-label">اسم المنطقة :</label>
                   <input
                     onChange={formik.handleChange}
@@ -97,10 +115,18 @@ const Address = () => {
                     placeholder="اسم المنطقة"
                     name="region"
                   />
+                  {validationsErrors?.region && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.region}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-5">
-                <div className="app-form">
+                <div
+                  className={`app-form ${validationsErrors.street && "error"}`}
+                >
                   <label className="control-label">
                     اسم الشارع: <span className="star">*</span>
                   </label>
@@ -113,11 +139,21 @@ const Address = () => {
                     name="street"
                     id="street"
                   />
+                  {validationsErrors?.street && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.street}
+                    </span>
+                  )}
                   <span className="errors_steps" id="mobile_error"></span>
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.landmark && "error"
+                  }`}
+                >
                   <label className="control-label">
                     أقرب معلم: <span className="star">*</span>
                   </label>
@@ -130,10 +166,20 @@ const Address = () => {
                     name="landmark"
                     id="landmark"
                   />
+                  {validationsErrors?.landmark && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.landmark}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-2">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.house_number && "error"
+                  }`}
+                >
                   <label className="control-label">
                     رقم المنزل: <span className="star">*</span>
                   </label>
@@ -145,10 +191,20 @@ const Address = () => {
                     placeholder="رقم المنزل"
                     name="house_number"
                   />
+                  {validationsErrors?.house_number && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.house_number}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-3">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.store_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم المعرض: <span className="star">*</span>
                   </label>
@@ -160,10 +216,20 @@ const Address = () => {
                     placeholder="اسم المعرض"
                     name="store_name"
                   />
+                  {validationsErrors?.store_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.store_name}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="col-md-4">
-                <div className="app-form">
+                <div
+                  className={`app-form ${
+                    validationsErrors.employee_name && "error"
+                  }`}
+                >
                   <label className="control-label">
                     اسم الموظف الذي تواصل معك: <span className="star">*</span>
                   </label>
@@ -175,6 +241,12 @@ const Address = () => {
                     placeholder="اسم الموظف الذي تواصل معك"
                     name="employee_name"
                   />
+                  {validationsErrors?.employee_name && (
+                    <span className="error_message">
+                      {" "}
+                      {validationsErrors?.employee_name}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -183,6 +255,7 @@ const Address = () => {
             <KafeelAddress
               values={formik.values}
               handleChange={formik.handleChange}
+              validationsErrors={validationsErrors}
             />
           )}
           <div className="col-md-12">

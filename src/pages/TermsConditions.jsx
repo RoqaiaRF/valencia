@@ -4,7 +4,10 @@ import SignatureCanvas from "react-signature-canvas";
 import { FaTrash } from "react-icons/fa";
 import dataURItoBlob from "../functions/formData";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 function Terms() {
+  const id = useParams().id;
+
   const sign = useRef();
   const check = useRef();
   useEffect(() => {
@@ -16,11 +19,11 @@ function Terms() {
         <h3 className="field-title"> الشروط والاحكام</h3>
       </div>
       <div className="crif_p">
-        <p>السادة شركة فلنسيا للسيارات الاردنية المحترمين ،</p>
+        <p>السادة شركة فلنسيا للسيارات  المحترمين ،</p>
         <p>تحية واحترام ،</p>
         <p className="text-justify">
           {" "}
-          انا الموقع ادناه افوض شركة فلنسيا للسيارات الاردنية بالاستعلام و/او
+          انا الموقع ادناه افوض شركة فلنسيا للسيارات  بالاستعلام و/او
           الافصاح و/او تزويد و/او تبادل المعلومات الائتمانية سواء بصفتي مدينا
           و/او كفيلا و/او شريك في شركة وذلك لدى كافة البنوك و/او الشركات المرخصة
           وفقا لاحكام قانون المعلومات الائتمانية على سيبل المثال شركة كريف
@@ -41,11 +44,11 @@ function Terms() {
         <p>
           علما انه تم اعلامي بحقي بالاطلاع على معلوماتي الائتمانية المستخرجة من
           نظام الاستعلام الائتماني (كريف) والاعتراض عليها وتصحيحها في حال وجود
-          اي خطأ صادر عن شركة فلنسيا للسيارات الاردنية .
+          اي خطأ صادر عن شركة فلنسيا للسيارات  .
         </p>
         <p>
           و اقر ان التوقيع على النموذج هو توقيعي و قمت بتوقيعه بنفسي و تم ارساله
-          الى شركة فلنسيا للسيارات الاردنية من الهاتف الشخصي العائد لي و اتحمل
+          الى شركة فلنسيا للسيارات  من الهاتف الشخصي العائد لي و اتحمل
           كامل المسوولية القانونية اذا تبين خلاف ذلك.
         </p>
       </div>
@@ -103,6 +106,8 @@ function Terms() {
                   var blob = dataURItoBlob(sign.current.toDataURL());
                   var fd = new FormData(document.forms[0]);
                   fd.append("signature", blob, "sign.png");
+                  fd.append("id", id);
+
                   await axios.post("http://localhost:8080/signiture", fd, {
                     headers: { "Content-Type": "multipart/form-data" },
                   });

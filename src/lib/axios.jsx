@@ -1,6 +1,6 @@
 import Axios from "axios";
 const axios = Axios.create({
-  baseURL: "http://localhost:8080/",
+  baseURL: "https://2229-91-186-227-54.eu.ngrok.io/",
   //    headers: {
   //      "X-Requested-With": "XMLHttpRequest",
   //  },

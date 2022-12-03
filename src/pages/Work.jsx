@@ -265,8 +265,8 @@ const Work = () => {
                     <option value="" disabled="" hidden="">
                       اختر الاجابة
                     </option>
-                    <option value="1">نعم</option>
-                    <option value="0">لا</option>
+                    <option value="نعم">نعم</option>
+                    <option value="لا">لا</option>
                   </select>
                   {validationsErrors?.is_daman && (
                     <span className="error_message">

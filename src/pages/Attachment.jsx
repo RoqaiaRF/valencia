@@ -24,6 +24,7 @@ function Attachment() {
   const [validationsErrors, setValidationErrors] = useState({});
   const navigate = useNavigate();
   const id = useParams().id;
+  const [userDone, setUserDone] = useState(false);
   const isKafeel = localStorage.getItem("kafeel");
   return (
     <>
@@ -282,31 +283,25 @@ function Attachment() {
             <button
               onClick={async () => {
                 try {
-                  if (isKafeel === "1") {
-                    const files = new FormData();
-                    const filesKafeel = new FormData();
-                    Object.keys(images).forEach((key) => {
-                      files.append(key, images[key]);
-                    });
-                    Object.keys(kafeelImages).forEach((key) => {
-                      filesKafeel.append(key, kafeelImages[key]);
-                    });
-                    files.append("id", id);
-                    filesKafeel.append("id", id);
-                    await Promise.all([
-                      axios.post("madeenfiles", files),
-                      axios.post("kafeelfiles", filesKafeel),
-                    ]);
-                    navigate("/terms/" + id);
-                  } else {
+                  if (userDone) {
                     const files = new FormData();
                     Object.keys(images).forEach((key) => {
                       files.append(key, images[key]);
                     });
                     files.append("id", id);
                     await axios.post("madeenfiles", files);
-                    navigate("/terms/" + id);
+                    setUserDone(true);
                   }
+                  if (isKafeel === "1") {
+                    const filesKafeel = new FormData();
+                    Object.keys(kafeelImages).forEach((key) => {
+                      filesKafeel.append(key, kafeelImages[key]);
+                    });
+                    filesKafeel.append("id", id);
+                    await axios.post("kafeelfiles", filesKafeel);
+                  }
+
+                  navigate("/terms/" + id);
                 } catch (error) {
                   if (error?.response?.data)
                     setValidationErrors(error.response.data);

@@ -442,16 +442,16 @@ const Info = () => {
           <div className="py-2">
             <button
               onClick={(e) => {
-                // if (!formik.values.phone) {
-                //   setValidationsErrors({ phone: "رقم الهاتف مطلوب" });
-                //   return;
-                // }
-                // if (phoneDone) {
-                onDone();
-                //   return;
-                // }
-                // setIsPhone(true);
-                // onSignInSubmit(e);
+                if (!formik.values.phone) {
+                  setValidationsErrors({ phone: "رقم الهاتف مطلوب" });
+                  return;
+                }
+                if (phoneDone) {
+                  onDone();
+                  return;
+                }
+                setIsPhone(true);
+                onSignInSubmit(e);
               }}
               style={{ width: 100 }}
               className="btn butt-primary nextBtn butt-lg pull-right step1_validation"

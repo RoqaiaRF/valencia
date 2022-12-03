@@ -16,6 +16,32 @@ body {
 .star {
   color: red;
 }
+.valencia-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  background-color: #faece1;
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  padding: 10px 40px;
+  justify-content: space-between;
+  font-size: 14px;
+  color: gray;
+  a {
+    text-decoration: none;
+    color: #eb26d0;
+    &:hover {
+      color: darken(#eb26d0, 10);
+    }
+  }
+  @media (max-width: 700px) {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
 .field-header {
   padding: 20px 0;
   margin-bottom: 15px;
@@ -271,4 +297,7 @@ body {
 .error_message {
   color: red;
   font-size: 13px;
+}
+.nextBtn {
+  margin-bottom: 50px;
 }

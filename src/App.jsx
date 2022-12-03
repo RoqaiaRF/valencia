@@ -11,7 +11,7 @@ import Error404 from "./pages/Error404";
 import Work from "./pages/Work";
 function App() {
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <Container>
         <Routes>
           <Route path="/" exact element={<Info />} />

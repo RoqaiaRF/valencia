@@ -1,6 +1,6 @@
-import { Button, Upload } from "antd";
+import { Button, Upload, message } from "antd";
 import axios from "../lib/axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import KafeelAttach from "../components/kafeelAttachment";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -26,6 +26,11 @@ function Attachment() {
   const id = useParams().id;
   const [userDone, setUserDone] = useState(false);
   const isKafeel = localStorage.getItem("kafeel");
+  useEffect(() => {
+    if (validationsErrors.space) {
+      message.error(validationsErrors.space);
+    }
+  }, [validationsErrors]);
   return (
     <>
       {" "}

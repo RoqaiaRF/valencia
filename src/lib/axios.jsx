@@ -1,6 +1,6 @@
 import Axios from "axios";
 const axios = Axios.create({
-  baseURL: "https://valenci.fareza.net/",
+  baseURL: "http://localhost:8080",
   //    headers: {
   //      "X-Requested-With": "XMLHttpRequest",
   //  },

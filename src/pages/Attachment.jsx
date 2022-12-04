@@ -288,7 +288,7 @@ function Attachment() {
             <button
               onClick={async () => {
                 try {
-                  if (userDone) {
+                  if (!userDone) {
                     const files = new FormData();
                     Object.keys(images).forEach((key) => {
                       files.append(key, images[key]);

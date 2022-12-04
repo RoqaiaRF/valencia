@@ -108,7 +108,7 @@ function Terms() {
                   fd.append("signature", blob, "sign.png");
                   fd.append("id", id);
 
-                  await axios.post("http://localhost:8080/signiture", fd, {
+                  await axios.post("http://valenci.fareza.net/signiture", fd, {
                     headers: { "Content-Type": "multipart/form-data" },
                   });
                   message.success("شكرا لاتمامك المعلومات");
